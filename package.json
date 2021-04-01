@@ -1,0 +1,119 @@
+{
+  "name": "okmr-ui",
+  "version": "1.0.0",
+  "private": false,
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/artmrsvch/okmr-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artmrsvch/okmr-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/artmrsvch/okmr-ui/issues"
+  },
+  "dependencies": {
+    "styled-components": "^5.2.0",
+    "antd": "^4.15.0",
+    "@ant-design/colors": "^6.0.0"
+  },
+  "scripts": {
+    "build": "tsc --build \"./tsconfig.json\"",
+    "build:storybook": "build-storybook -s public",
+    "clean": "rm -rf ./lib",
+    "compile-icons": "npx @svgr/cli -d src/icons src/icons --typescript",
+    "copy-fonts": "copyfiles -u 1 src/config/fonts/* lib/",
+    "eject": "react-scripts eject",
+    "postbuild": "npm run copy-fonts",
+    "prebuild": "npm run clean && npm run compile-icons",
+    "prepublish": "npm run build",
+    "start:storybook": "start-storybook -p 6006 -s public && npm run prettier-watch",
+    "prettier-watch": "onchange 'src/**/*' -- prettier --write {{changed}}",
+    "lint": "eslint src/**/* --ext .ts,.tsx --fix",
+    "test": "npm run lint && jest"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=16.13.1",
+    "react-dom": ">=16.13.1",
+    "email-validator": ">=2.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-essentials": "^6.0.22",
+    "@storybook/addon-info": "5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^6.0.22",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/node-logger": "^6.0.22",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.22",
+    "@svgr/cli": "^5.4.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/storybook__addon-info": "^4.1.2",
+    "@types/storybook__addon-knobs": "^5.0.2",
+    "@types/storybook__react": "4.0.2",
+    "@types/styled-components": "^5.1.3",
+    "@typescript-eslint/eslint-plugin": "1.6.0",
+    "@typescript-eslint/parser": "1.6.0",
+    "babel-loader": "^8.1.0",
+    "copyfiles": "^2.4.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-loader": "2.1.2",
+    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "husky": "^3.0.0",
+    "jest": "24.8.0",
+    "onchange": "6.0.0",
+    "prettier": "1.18.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "typescript": "^4.0.3"
+  }
+}
