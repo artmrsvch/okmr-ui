@@ -1,27 +1,46 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { Colors } from '../../config/colors';
+import { xs } from '../../config/breakpoints';
 
-const headingMargin = css`
-    margin: 15px 0;
+export const Title = styled.h1`
+  font-size: 38px;
+  color: ${Colors.black};
+  font-weight: bold;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: ${xs}) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 `;
 
-interface HeaderProps {
-    align?: 'center' | 'right' | 'left';
-}
+export const Subtitle = styled.h2`
+  color: ${Colors.black};
+  font-weight: bold;
+  font-size: 20px;
 
-export const H1 = styled.h1<HeaderProps>`
-    font-size: 64px;
-    text-align: ${pr => pr.align ? pr.align : 'left'};
-    ${headingMargin}
+  @media screen and (max-width: ${xs}) {
+    font-size: 18px;
+  }
 `;
 
-export const H2 = styled.h2<HeaderProps>`
-    font-size: 48px;
-    text-align: ${pr => pr.align ? pr.align : 'left'};
-    ${headingMargin}
+export const H3 = styled.h3`
+  color: ${Colors.black};
+  font-weight: bold;
+  font-size: 16px;
+    
 `;
 
-export const H3 = styled.h3<HeaderProps>`
-    font-size: 24px;
-    text-align: ${pr => pr.align ? pr.align : 'left'};
-    ${headingMargin}
+export const H4 = styled.h4`
+  color: ${Colors.black};
+  font-weight: bold;
+  font-size: 14px;
+
 `;
+
+export const Paragraph = styled.p`
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: ${Colors.black};
+`
