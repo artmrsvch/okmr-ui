@@ -37,9 +37,10 @@ const Template: Story = () => <div>
   <Typography.Subtitle>H2 Subtitle</Typography.Subtitle>
   <Typography.H3>H3 headline</Typography.H3>
   <Typography.H4>H4 headline</Typography.H4>
-  <Typography.Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus doloremque dolores eius eligendi fugiat illum incidunt magnam nihil officiis perferendis quae quasi qui quia quos reprehenderit temporibus, vero voluptatum.</Typography.Paragraph>
+  <Typography.Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus doloremque dolores
+    eius eligendi fugiat illum incidunt magnam nihil officiis perferendis quae quasi qui quia quos reprehenderit
+    temporibus, vero voluptatum.</Typography.Paragraph>
 </div>;
-
 
 
 export const Default = Template.bind({});

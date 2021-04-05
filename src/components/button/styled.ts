@@ -3,9 +3,9 @@ import { Button } from 'antd/lib';
 import * as React from 'react';
 import { CheckboxProps } from 'antd/lib/checkbox/Checkbox';
 import { Colors } from '../../config/colors';
-import {xs} from "../../config/breakpoints";
+import { xs } from '../../config/breakpoints';
 
-interface StyledAtndButtonProps
+export interface StyledAtndButtonProps
   extends React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>> {
   __ANT_BUTTON: boolean;
   Group: any;
@@ -26,7 +26,8 @@ export const StyledAtndButton = styled(Button as StyledAtndButtonProps)<{
       pr.type !== 'text'
         ? `${Colors[pr.color]}`
         : undefined};
-    border-color: ${(pr) => (pr.color && pr.type !== 'link' &&  pr.type !== 'text' ? `${Colors[pr.color]}` : undefined)};
+    border-color: ${(pr) =>
+      pr.color && pr.type !== 'link' && pr.type !== 'text' ? `${Colors[pr.color]}` : undefined};
     color: ${(pr) => (pr.color && pr.type !== 'primary' ? `${Colors[pr.color]}` : undefined)};
   }
 
