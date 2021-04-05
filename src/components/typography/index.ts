@@ -1,1 +1,3 @@
-export * from './styled';
+import * as Typography from './styled';
+
+export default Typography;
