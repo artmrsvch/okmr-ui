@@ -52,7 +52,7 @@ const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
       <NavigationItem key={link.to + iter}>
         <NavigationExternalLink href={link.to}>
           {link.icon}
-          <NavigationLinkText>{link.text}</NavigationLinkText>
+          <NavigationLinkText className="navigation-link-text">{link.text}</NavigationLinkText>
         </NavigationExternalLink>
       </NavigationItem>
     ))}

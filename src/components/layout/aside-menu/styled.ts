@@ -152,7 +152,6 @@ export const NavigationExternalLink = styled.a`
   background: transparent;
   font-weight: bold;
   width: 100%;
-  padding: 10px 5px;
   line-height: 1.5;
 `;
 
