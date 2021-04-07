@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { Button } from 'antd/lib';
+import { Button, ButtonProps } from 'antd';
 import * as React from 'react';
-import { CheckboxProps } from 'antd/lib/checkbox/Checkbox';
 import { Colors } from '../../config/colors';
 import { xs } from '../../config/breakpoints';
 
 export interface StyledAtndButtonProps
-  extends React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>> {
+  extends React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLInputElement>> {
   __ANT_BUTTON: boolean;
   Group: any;
 }
