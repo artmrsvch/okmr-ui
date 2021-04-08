@@ -32,15 +32,31 @@ export default {
   }
 };
 
-const Template: Story = () => <div>
-  <Typography.Title>H1 Title</Typography.Title>
-  <Typography.Subtitle>H2 Subtitle</Typography.Subtitle>
-  <Typography.H3>H3 headline</Typography.H3>
-  <Typography.H4>H4 headline</Typography.H4>
-  <Typography.Paragraph>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus doloremque dolores
-    eius eligendi fugiat illum incidunt magnam nihil officiis perferendis quae quasi qui quia quos reprehenderit
-    temporibus, vero voluptatum.</Typography.Paragraph>
-</div>;
-
+const Template: Story = () => (
+  <div>
+    <Typography.Title>H1 Title</Typography.Title>
+    <Typography.Subtitle>H2 Subtitle</Typography.Subtitle>
+    <Typography.H3>H3 headline</Typography.H3>
+    <Typography.H4>H4 headline</Typography.H4>
+    <Typography.Paragraph>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus doloremque
+      dolores eius eligendi fugiat illum incidunt magnam nihil officiis perferendis quae quasi qui
+      quia quos reprehenderit temporibus, vero voluptatum. Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Aspernatur delectus doloremque dolores eius eligendi fugiat illum incidunt
+      magnam nihil officiis perferendis quae quasi qui quia quos reprehenderit temporibus, vero
+      voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque distinctio eius
+      hic perspiciatis, reiciendis repellat rerum tenetur voluptate. Aspernatur autem eligendi
+      impedit ipsam odio odit quas repudiandae sapiente similique vitae! Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Adipisci, aliquam aliquid animi dicta dignissimos dolore
+      doloremque ducimus facilis harum incidunt iure iusto labore laboriosam necessitatibus, quasi,
+      repudiandae suscipit temporibus velit!
+    </Typography.Paragraph>
+    <Typography.Prompt>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus doloremque
+      dolores eius eligendi fugiat illum incidunt magnam nihil officiis perferendis quae quasi qui
+      quia quos reprehenderit temporibus, vero voluptatum.
+    </Typography.Prompt>
+  </div>
+);
 
 export const Default = Template.bind({});

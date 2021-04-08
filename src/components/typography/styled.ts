@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import { Colors } from '../../config/colors';
 import { xs } from '../../config/breakpoints';
 
@@ -28,19 +28,29 @@ export const H3 = styled.h3`
   color: ${Colors.black};
   font-weight: bold;
   font-size: 16px;
-    
 `;
 
 export const H4 = styled.h4`
   color: ${Colors.black};
   font-weight: bold;
   font-size: 14px;
-
 `;
 
 export const Paragraph = styled.p`
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: ${Colors.black};
-`
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: ${Colors.black};
+`;
+export const Prompt = styled.p`
+  color: ${Colors.silver};
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media screen and (max-width: ${xs}) {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+  }
+`;
