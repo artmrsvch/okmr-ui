@@ -1,6 +1,6 @@
 {
   "name": "okmr-ui",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "private": false,
   "license": "MIT",
   "main": "lib/index.js",

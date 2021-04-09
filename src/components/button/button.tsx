@@ -1,4 +1,3 @@
-import {StyledAtndButton as Button} from "./styled";
-import 'antd/lib/button/style/css'
+import { StyledAtndButton as Button } from './styled';
 
-export default Button
+export default Button;

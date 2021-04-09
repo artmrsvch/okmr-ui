@@ -3,7 +3,7 @@ import { Checkbox as AntdCheckbox } from 'antd';
 import { CheckboxProps } from 'antd/lib/checkbox/Checkbox';
 import * as React from 'react';
 
-interface CheckboxStyleProps
+export interface CheckboxStyleProps
   extends React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>> {
   __ANT_CHECKBOX: boolean;
   Group: any;
