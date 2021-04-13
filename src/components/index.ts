@@ -1,9 +1,7 @@
-export { default as Button } from './button';
+import Button from './button';
+import Checkbox from './checkbox';
+import Typography from './typography';
+import Layout from './layout';
+import Popover from './popover';
 
-export { default as Checkbox } from './checkbox';
-
-export { default as Typography } from './typography';
-
-export { default as Layout } from './layout';
-
-export { default as Popover } from './popover';
+export { Button, Checkbox, Layout, Typography, Popover };
