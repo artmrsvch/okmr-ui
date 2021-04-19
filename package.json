@@ -19,9 +19,10 @@
     "url": "https://github.com/artmrsvch/okmr-ui/issues"
   },
   "dependencies": {
-    "styled-components": "^5.2.0",
+    "@ant-design/colors": "^6.0.0",
     "antd": "^4.15.0",
-    "@ant-design/colors": "^6.0.0"
+    "storybook-addon-designs": "^5.4.5",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "build": "tsc --build \"./tsconfig.json\"",
@@ -74,7 +75,7 @@
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-essentials": "^6.0.22",
     "@storybook/addon-info": "5.1.9",
-    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-knobs": "^5.3.21",
     "@storybook/addon-links": "^6.0.22",
     "@storybook/addons": "^5.1.9",
     "@storybook/node-logger": "^6.0.22",
