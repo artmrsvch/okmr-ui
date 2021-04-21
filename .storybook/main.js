@@ -9,5 +9,6 @@ module.exports = {
     "@storybook/preset-create-react-app",
     '@storybook/addon-knobs',
     'storybook-addon-designs',
+    "storybook-addon-pseudo-states"
   ]
 }

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import Modal from 'antd/lib/modal/Modal';
 import {
   Aside,
   AsideHeadline,
@@ -20,7 +21,6 @@ import {
 } from './styled';
 import LogoMin from '../../../icons/LogoMin';
 import Logo from '../../../icons/Logo';
-import Modal from 'antd/lib/modal/Modal';
 import { md } from '../../../config/breakpoints';
 import { DashboardLayoutProps, Role } from '../layout';
 import { toggleId } from '../utils';

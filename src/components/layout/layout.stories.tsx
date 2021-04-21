@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Story } from '@storybook/react/types-6-0';
-import Layout from './index';
 import {
   Title as DocsTitle,
   Subtitle as DocsSubtitle,
@@ -11,6 +10,7 @@ import {
   Stories,
   PRIMARY_STORY
 } from '@storybook/addon-docs/blocks';
+import Layout from './index';
 import SvgArrowLeft from '../../icons/ArrowLeft';
 import { NavigationCountWidget } from './aside-menu/styled';
 import LogoMin from '../../icons/LogoMin';
@@ -184,7 +184,7 @@ DashboardLayout.args = {
   links,
   externalLinks,
   isPartner: false,
-  headerWidgets: headerWidgets
+  headerWidgets
 };
 
 DashboardLayout.argTypes = {

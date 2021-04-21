@@ -2,10 +2,11 @@ import * as React from 'react';
 import {Story} from '@storybook/react/types-6-0';
 import {select, text, boolean, withKnobs} from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
-import Icon, { MessageOutlined, DeleteOutlined, WarningOutlined } from '@ant-design/icons';
-import Button from './index';
-
+import { action } from '@storybook/addon-actions';
+import Icon, { MessageOutlined, DeleteOutlined, WarningOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import {ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title} from '@storybook/addon-docs/blocks';
+import Button from './index';
+import CustomizedButton from './customized';
 import {xs} from '../../config/breakpoints';
 
 export default {
@@ -26,7 +27,7 @@ export default {
           </Description>
           <Primary />
           <Description>
-            {`Создана на базе кнопки из библиотеки Antd.`}
+            Создана на базе кнопки из библиотеки Antd.
           </Description>
           <ArgsTable story={PRIMARY_STORY} />
           <Stories />
@@ -51,76 +52,19 @@ const optionsSize = {
   Middle: 'middle'
 }
 
-const icons = { MessageOutlined, DeleteOutlined, WarningOutlined }
-
-
-export const withAButton = () => (
-  <Button
-    size={select(labelSize, optionsSize, 'large')}
-    loading={boolean('Loading', false)}
-    danger={boolean('Danger', false)}
-    icon={React.createElement(icons[select("иконки", Object.keys(icons), Object.keys(icons)[0])])}
-    shape={select('форма', {circle : "circle" , round :"round"}, null)}
-    type={select('тип', { primary : "primary", default : 'default', link : 'link'}, 'primary')}
-  >
-    {text('Label', 'Кнопка')}
-  </Button>
-);
+const icons = { MessageOutlined, DeleteOutlined, WarningOutlined, UnorderedListOutlined }
+const nullify = (v) => !v ? null : v;
 
 
 export const Default = Template.bind({});
-export const ChatButtons = Template.bind({});
 
-ChatButtons.args = {
-  type: 'primary',
-  danger: false,
-  children: 'Перейти в чат',
-  icon: <MessageOutlined />,
-  loading: false,
-  size: 'large'
-}
-ChatButtons.argTypes = {
-  type: {
-    description: 'Типы кнопок',
-    control: {
-      type: 'select',
-      options: ['primary', 'link', 'default', 'dashed', 'text']
-    }
-  },
-  color: {
-    description: 'Кастомные цвета из макета',
-    control: {
-      options: ['blue', 'green', 'orange', 'lightBlue'],
-      type: 'select'
-    }
-  },
-  size: {
-    description: 'Размер кнопки'
-  },
-  icon: {
-    control: {
-      type: "select",
-      options: {
-        MessageOutlined : 'MessageOutlined',
-        DeleteOutlined : 'DeleteOutlined'
-      },
-    },
-  },
-  /*icon: {
-    description: 'Иконка',
-    control: {
-      option: <MessageOutlined />,
-      type: "select"
-
-    }
-  }*/
-}
 Default.args = {
   type: 'primary',
   danger: false,
   children: 'Кнопка',
   loading: false
 };
+
 Default.argTypes = {
   type: {
     description: 'Типы кнопок',
@@ -137,3 +81,30 @@ Default.argTypes = {
     }
   }
 };
+
+export const CutomizedButtonWithIcon = () => (
+  <CustomizedButton
+    icon={React.createElement(icons[select("префикс", Object.keys(icons), Object.keys(icons)[0])])}
+    type={select('тип', { primary : "primary", default : 'default', link : 'link'}, 'primary')}
+    danger={boolean('Danger', false)}
+    shape={nullify(select('форма', {circle : "circle" , round :"round", default : null}, null))}
+    loading={boolean('Loading', false)}
+    onClick={action('onClick')}
+    color={select('цвет', ['blue', 'green', 'orange', 'lightBlue', 'yellow', 'red'], 'lightBlue')}
+    children={text('Label', 'Открыть')}
+  />
+)
+
+export const CutomizedButtonWithSuffix = () => (
+  <CustomizedButton
+    suffix={React.createElement(icons[select("иконки", Object.keys(icons), Object.keys(icons)[0])])}
+    type={select('тип', { primary : "primary", default : 'default', link : 'link'}, 'primary')}
+    danger={boolean('Danger', false)}
+    shape={select('форма', {circle : "circle" , round :"round"}, null)}
+    loading={boolean('Loading', false)}
+    onClick={action('onClick')}
+    color={select('цвет', ['blue', 'green', 'orange', 'lightBlue', 'yellow', 'red'], 'lightBlue')}
+    children={text('Label', 'Перейти')  }
+  />
+)
+

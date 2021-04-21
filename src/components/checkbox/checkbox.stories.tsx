@@ -17,15 +17,13 @@ Default.args = {
   children: 'Checkbox label'
 };
 
-export const Disabled = () => {
-  return (
+export const Disabled = () => (
     <>
       <label title="Не активный" style={{ marginRight: '20px' }}>
-        <Checkbox disabled={true} />
+        <Checkbox disabled />
       </label>
       <label title="Активный">
-        <Checkbox disabled={true} checked={true} />
+        <Checkbox disabled checked />
       </label>
     </>
   );
-};

@@ -39,8 +39,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   isPartner,
   externalLinks,
   role
-}) => {
-  return (
+}) => (
     <Container>
       <CheckedInput className="navigation-toggle" type="checkbox" id={toggleId} />
       <Navigation
@@ -56,6 +55,5 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       </Workspace>
     </Container>
   );
-};
 
 export default DashboardLayout;

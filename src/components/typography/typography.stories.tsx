@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Story } from '@storybook/react/types-6-0';
-import Typography from './index';
-
 import {
   Title as DocsTitle,
   Subtitle as DocsSubtitle,
@@ -11,6 +9,8 @@ import {
   Stories,
   PRIMARY_STORY
 } from '@storybook/addon-docs/blocks';
+import Typography from './index';
+
 
 export default {
   title: 'Components/Typography',
