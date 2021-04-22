@@ -19,11 +19,11 @@ Default.args = {
 
 export const Disabled = () => (
     <>
-      <label title="Не активный" style={{ marginRight: '20px' }}>
-        <Checkbox disabled />
+      <label htmlFor="checkbox-disabled" title="Не активный" style={{ marginRight: '20px' }}>
+        <Checkbox id="checkbox-disabled" disabled />
       </label>
-      <label title="Активный">
-        <Checkbox disabled checked />
+      <label htmlFor="checkbox" title="Активный">
+        <Checkbox id="checkbox" disabled checked />
       </label>
     </>
   );

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Story} from '@storybook/react/types-6-0';
+// import {Story} from '@storybook/react/types-6-0';
 import {select, text, boolean, withKnobs} from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
 import { action } from '@storybook/addon-actions';
@@ -91,6 +91,7 @@ export const CutomizedButtonWithIcon = () => (
     loading={boolean('Loading', false)}
     onClick={action('onClick')}
     color={select('цвет', ['blue', 'green', 'orange', 'lightBlue', 'yellow', 'red'], 'lightBlue')}
+    // eslint-disable-next-line
     children={text('Label', 'Открыть')}
   />
 )
@@ -104,6 +105,7 @@ export const CutomizedButtonWithSuffix = () => (
     loading={boolean('Loading', false)}
     onClick={action('onClick')}
     color={select('цвет', ['blue', 'green', 'orange', 'lightBlue', 'yellow', 'red'], 'lightBlue')}
+    // eslint-disable-next-line
     children={text('Label', 'Перейти')  }
   />
 )

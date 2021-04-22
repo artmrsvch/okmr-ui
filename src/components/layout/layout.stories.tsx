@@ -13,10 +13,10 @@ import {
 import Layout from './index';
 import SvgArrowLeft from '../../icons/ArrowLeft';
 import { NavigationCountWidget } from './aside-menu/styled';
-import LogoMin from '../../icons/LogoMin';
+import SvgLogoMin, { LogoMin } from '../../icons/LogoMin';
 import InternalHeader from './header';
 import SvgLogo from '../../icons/Logo';
-import SvgLogoMin from '../../icons/LogoMin';
+
 
 const links = [
   {
