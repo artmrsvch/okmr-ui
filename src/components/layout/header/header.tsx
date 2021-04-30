@@ -10,7 +10,7 @@ export interface HeaderProps extends AsideToggleProps {
 }
 
 const AsideToggle: React.FC<AsideToggleProps> = ({ htmlFor }) => (
-  <AsideToggleLabel htmlFor={htmlFor}>
+  <AsideToggleLabel className="aside-toggle-header-label" htmlFor={htmlFor}>
     <SvgArrowLeft />
   </AsideToggleLabel>
 );

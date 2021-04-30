@@ -34,7 +34,7 @@ export const CheckedInput = styled.input`
 
   &:checked {
     & ~ .dashboard-workspace {
-      label {
+      .aside-toggle-header-label {
         transform: rotate(180deg);
       }
     }
