@@ -3,8 +3,8 @@ import { md } from '../../config/breakpoints';
 import { Colors } from '../../config/colors';
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: ${Colors.background};
   display: flex;
 `;

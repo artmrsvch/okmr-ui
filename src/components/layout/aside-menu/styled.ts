@@ -4,7 +4,6 @@ import { md } from '../../../config/breakpoints';
 
 export const Aside = styled.aside`
   border-right: 1px solid #d7e7ff;
-  height: 100%;
   width: 240px;
   background: #eff4ff;
   transition: 0.2s;
