@@ -99,7 +99,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   );
 
   return (
-    <nav style={{ flex: 1 }}>
+    <nav style={{ flex: 1 }} >
       <NavigationList>
         {sortedLinks.map((link) => (
           <NavigationItem

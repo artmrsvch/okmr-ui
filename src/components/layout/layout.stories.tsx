@@ -18,7 +18,7 @@ import InternalHeader from './header';
 import SvgLogo from '../../icons/Logo';
 import SvgLogoMin from '../../icons/LogoMin';
 
-const links = [
+const linksShort = [
   {
     text: 'Заказы',
     to: '/',
@@ -36,24 +36,6 @@ const links = [
     to: '/two',
     icon: <SvgArrowLeft />,
     additionalWidget: <NavigationCountWidget>0</NavigationCountWidget>
-  },
-  {
-    text: 'Товары',
-    to: '/ones',
-    icon: <SvgArrowLeft />,
-    supplierOnly: true
-  },
-  {
-    text: 'Удаленные аккаунты',
-    to: '/twos',
-    icon: <SvgArrowLeft />,
-    supplierOnly: true
-  },
-  {
-    text: 'Товары',
-    to: '/oned',
-    icon: <SvgArrowLeft />,
-    supplierOnly: true
   },
   {
     text: 'Удаленные аккаунты',
@@ -77,12 +59,6 @@ const links = [
     text: 'Настройки',
     to: '/three',
     icon: <SvgArrowLeft />
-  },
-  {
-    text: 'Сообщения',
-    to: '/four',
-    icon: <LogoMin />,
-    supplierOnly: true
   }
 ];
 const externalLinks = [
@@ -173,7 +149,126 @@ const Template: Story = (args: any) => (
       incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
       Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
       ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
-      sed tempora tenetur. Culpa, odio?
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque
+      ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe
+      sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores modi nam nesciunt
+      porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit amet, consectetur
+      adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum, libero maiores
+      modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem ipsum dolor sit
+      amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum incidunt laborum,
+      libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur. Culpa, odio? Lorem
+      ipsum dolor sit amet, consectetur adipisicing elit. Dicta doloremque ducimus et eum id illum
+      incidunt laborum, libero maiores modi nam nesciunt porro, quos saepe sed tempora tenetur.
+      Culpa, odio?
     </Layout>
   </BrowserRouter>
 );
@@ -181,7 +276,7 @@ export const DashboardLayout = Template.bind({});
 DashboardLayout.args = {
   role: 'admin',
   isHasSupplierStatus: true,
-  links,
+  links: linksShort,
   externalLinks,
   isPartner: false,
   headerWidgets: headerWidgets
