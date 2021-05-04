@@ -60,7 +60,7 @@ const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
 );
 
 const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
-  const [modal] = Modal.useModal();
+  const [modal, contextHolder] = Modal.useModal();
   const location = useLocation();
 
   const onItemClick = (isProtectLink: boolean, event: React.MouseEvent) => {
@@ -99,7 +99,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   );
 
   return (
-    <nav style={{ flex: 1 }}>
+    <nav style={{ flex: 1 }} >
       <NavigationList>
         {sortedLinks.map((link) => (
           <NavigationItem
@@ -124,6 +124,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
           </NavigationItem>
         ))}
       </NavigationList>
+      {contextHolder}
     </nav>
   );
 };

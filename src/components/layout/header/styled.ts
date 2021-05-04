@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { md } from '../../../config/breakpoints';
 
 export const HeaderStyled = styled.header<{ supplier?: boolean }>`
   padding: 0 20px;
@@ -21,8 +22,20 @@ export const WidgetBlock = styled.div`
   flex: 1;
 `;
 export const AsideToggleLabel = styled.label`
-  cursor: pointer;
-  width: 26px;
-  height: 26px;
-  transition: 0.2s;
+  display: none;
+  @media screen and (max-width: ${md}) {
+    display: block;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    transition: 0.2s;
+    margin-left: 20px;
+
+    .aside-menu-activation__open {
+      display: block;
+    }
+    .aside-menu-activation__close {
+      display: none;
+    }
+  }
 `;

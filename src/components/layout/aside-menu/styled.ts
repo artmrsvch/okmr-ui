@@ -4,8 +4,8 @@ import { md } from '../../../config/breakpoints';
 
 export const Aside = styled.aside`
   border-right: 1px solid #d7e7ff;
-  height: 100%;
-  width: 240px;
+  min-width: 240px;
+  height: 100vh;
   background: #eff4ff;
   transition: 0.2s;
   box-sizing: border-box;
@@ -35,7 +35,7 @@ export const AsideLogo = styled.a`
 `;
 export const AsideHeadlineRole = styled.span`
   margin-left: 5px;
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
   color: black;
@@ -52,9 +52,10 @@ export const InlineFlexDiv = styled.a`
 `;
 
 export const NavigationWrapper = styled.div`
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  height: 85%;
+  height: calc(100% - 60px);
   justify-content: space-between;
   max-height: -webkit-fill-available;
   -webkit-overflow-scrolling: touch;
@@ -178,7 +179,7 @@ export const WidgetWrapper = styled.div`
 
 export const NavigationDivider = styled.div`
   width: 80%;
-  height: 1px;
+  min-height: 1px;
   margin-left: auto;
   margin-right: auto;
   background: #d7e7ff;

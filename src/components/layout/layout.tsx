@@ -11,13 +11,13 @@ export interface NavigationLink {
   to: string;
   icon: React.ComponentElement<any, any>;
   roles?: Role[];
-  visibility: boolean;
+  visibility?: boolean;
   additionalWidget?: React.ReactNode;
   isActive?: boolean;
 
   // suppler
   supplierOnly?: boolean;
-  hidden?: boolean; // ввел вадим для возможности скрытия раздела
+  hidden?: boolean;
 }
 
 export interface DashboardLayoutProps {

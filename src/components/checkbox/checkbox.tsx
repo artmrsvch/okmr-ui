@@ -1,4 +1,3 @@
-import {CheckboxStyle as Checkbox} from "./styled";
-import 'antd/lib/checkbox/style/index.css'
+import { CheckboxStyle as Checkbox } from './styled';
 
-export default Checkbox
+export default Checkbox;
