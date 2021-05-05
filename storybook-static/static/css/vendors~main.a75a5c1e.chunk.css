@@ -2047,6 +2047,12 @@ a.ant-btn-sm {
   line-height: unset;
   cursor: pointer;
 }
+.ant-checkbox-wrapper::after {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  content: '\a0';
+}
 .ant-checkbox-wrapper.ant-checkbox-wrapper-disabled {
   cursor: not-allowed;
 }
@@ -4127,4 +4133,4 @@ html {
 }
 
 
-/*# sourceMappingURL=vendors~main.1ecbdcf7.chunk.css.map*/
+/*# sourceMappingURL=vendors~main.a75a5c1e.chunk.css.map*/

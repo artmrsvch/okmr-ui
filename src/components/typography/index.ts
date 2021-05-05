@@ -1,3 +1,7 @@
-import * as Typography from './styled';
+import Button from '../button';
+import Checkbox from '../checkbox';
+import Typography from './';
+import Layout from '../layout';
+import Popover from '../popover';
 
-export default Typography;
+export { Button, Checkbox, Layout, Typography, Popover };

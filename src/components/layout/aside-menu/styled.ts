@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { md, xl } from '../../../config/breakpoints';
+import { xl } from '../../../config/breakpoints';
 
 export const Aside = styled.aside`
   border-right: 1px solid #d7e7ff;
