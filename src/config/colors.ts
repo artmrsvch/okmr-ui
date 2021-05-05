@@ -6,5 +6,6 @@ export enum Colors {
   green = '#8FBA14',
   silver = '#A9A9A9',
   orange = '#FF7F03',
-  background = '#eff4ff'
+  background = '#eff4ff',
+  yellow = '#FFD600',
 }
