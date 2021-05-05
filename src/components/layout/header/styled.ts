@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { md } from '../../../config/breakpoints';
+import { xl } from '../../../config/breakpoints';
 
 export const HeaderStyled = styled.header<{ supplier?: boolean }>`
   padding: 0 20px;
@@ -23,7 +23,7 @@ export const WidgetBlock = styled.div`
 `;
 export const AsideToggleLabel = styled.label`
   display: none;
-  @media screen and (max-width: ${md}) {
+  @media screen and (max-width: ${xl}) {
     display: block;
     cursor: pointer;
     width: 26px;

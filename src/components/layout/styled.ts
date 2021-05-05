@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { md, xs } from '../../config/breakpoints';
+import { xl, xs } from '../../config/breakpoints';
 import { Colors } from '../../config/colors';
 
 export const Container = styled.div`
@@ -43,7 +43,7 @@ export const CheckedInput = styled.input`
     }
 
     & ~ .aside-menu {
-      @media screen and (max-width: ${md}) {
+      @media screen and (max-width: ${xl}) {
         left: 0;
         top: 0;
         position: fixed;
@@ -76,7 +76,7 @@ export const CheckedInput = styled.input`
   }
 
   & ~ .aside-menu {
-    @media screen and (max-width: ${md}) {
+    @media screen and (max-width: ${xl}) {
       position: fixed;
       left: -260px;
     }
