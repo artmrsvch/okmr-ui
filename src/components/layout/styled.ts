@@ -3,7 +3,7 @@ import { md, xs } from '../../config/breakpoints';
 import { Colors } from '../../config/colors';
 
 export const Container = styled.div`
-  background-color: ${Colors.background};
+  //background-color: ${Colors.background};
   display: flex;
 `;
 export const Workspace = styled.div`

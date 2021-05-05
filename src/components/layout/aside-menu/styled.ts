@@ -13,6 +13,7 @@ export const Aside = styled.aside`
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 911;
 `;
 
 export const AsideHeadline = styled.div`

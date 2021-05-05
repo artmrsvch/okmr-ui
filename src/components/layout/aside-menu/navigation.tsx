@@ -49,7 +49,7 @@ export type NavigationProps = Omit<AsideMenuProps, 'isPartner' | 'role'>;
 const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
   <NavigationList>
     {links.map((link: any, iter : number) => (
-      <NavigationItem key={Number(`${link.to+iter}`)}>
+      <NavigationItem key={`${link.to+iter}`}>
         <NavigationExternalLink href={link.to}>
           {link.icon}
           <NavigationLinkText className="navigation-link-text">{link.text}</NavigationLinkText>
@@ -111,7 +111,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
               className="navigation-item__link"
               to={link.to}
               disabled={!isHasSupplierStatus && link.supplierOnly}
-              onClick={() => onItemClick(!!(!isHasSupplierStatus && link.supplierOnly))}>
+              onClick={(e: any) => onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), e)}>
               <NavigationLinkContent className={link.additionalWidget ? 'navigation-link__content--with-widget' : undefined}>
                 <NavigationLinkIcon className="navigation-link-icon">
                   {link.icon}
