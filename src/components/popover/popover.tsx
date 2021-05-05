@@ -1,9 +1,9 @@
 import React from 'react';
 import { Popover } from 'antd';
+import { TooltipPlacement } from 'antd/es/tooltip';
 import SvgQuestionCircle from '../../icons/QuestionCircle';
 import {PopoverWrapper, WrapperButton} from './styled'
 import { Colors } from '../../config/colors';
-import { TooltipPlacement } from 'antd/es/tooltip';
 
 export type Trigger = 'hover' | 'click' | 'focus'
 

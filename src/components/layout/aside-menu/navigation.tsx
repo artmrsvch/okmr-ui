@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
+import Modal from 'antd/lib/modal/Modal';
 import {
   Aside,
   AsideHeadline,
@@ -20,7 +21,6 @@ import {
 } from './styled';
 import LogoMin from '../../../icons/LogoMin';
 import Logo from '../../../icons/Logo';
-import Modal from 'antd/lib/modal/Modal';
 import { md } from '../../../config/breakpoints';
 import { DashboardLayoutProps, Role } from '../layout';
 import { toggleId } from '../utils';
@@ -48,8 +48,8 @@ export type NavigationProps = Omit<AsideMenuProps, 'isPartner' | 'role'>;
 
 const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
   <NavigationList>
-    {links.map((link, iter) => (
-      <NavigationItem key={link.to + iter}>
+    {links.map((link: any, iter : number) => (
+      <NavigationItem key={Number(`${link.to+iter}`)}>
         <NavigationExternalLink href={link.to}>
           {link.icon}
           <NavigationLinkText className="navigation-link-text">{link.text}</NavigationLinkText>
@@ -84,6 +84,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
       const expander = document.getElementById(toggleId) as HTMLInputElement
       expander.checked = false
     }
+    return true;
   };
 
   const sortedLinks = useMemo(
@@ -110,7 +111,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
               className="navigation-item__link"
               to={link.to}
               disabled={!isHasSupplierStatus && link.supplierOnly}
-              onClick={onItemClick.bind(null, !!(!isHasSupplierStatus && link.supplierOnly))}>
+              onClick={() => onItemClick(!!(!isHasSupplierStatus && link.supplierOnly))}>
               <NavigationLinkContent className={link.additionalWidget ? 'navigation-link__content--with-widget' : undefined}>
                 <NavigationLinkIcon className="navigation-link-icon">
                   {link.icon}
