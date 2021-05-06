@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input, InputProps } from 'antd';
+import { Input, InputProps, Button } from 'antd';
 
 const { Search } = Input;
 
@@ -11,3 +11,7 @@ export interface StyledAntdInputProps
 export interface StyledSearchInfo {}
 
 export const StyledSearch = styled(Search as StyledAntdInputProps)<StyledSearchInfo>``;
+
+export const ButtonCenter = styled(Button)`
+  font-size: 20px;
+`;
