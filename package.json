@@ -21,11 +21,20 @@
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
     "antd": "^4.15.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-webpack": "^0.13.0",
-    "lint-staged": "^10.5.4",
     "storybook-addon-designs": "^6.0.0-beta.0",
-    "styled-components": "^5.2.0"
+    "react": "^16.14.0",
+    "react-dom": "^16.12.0",
+    "react-is": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "styled-components": "^5.2.0",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.0.3",
+    "enzyme-adapter-react-16": "^1.15.6"
   },
   "scripts": {
     "build": "tsc --build \"./tsconfig.json\"",
@@ -38,16 +47,26 @@
     "prettier-watch": "onchange 'src/**/*' -- prettier --write {{changed}}",
     "start:storybook": "start-storybook -p 6006 -s public && npm run prettier-watch",
     "lint": "eslint eslint src/**/* --ext .ts,.tsx --no-error-on-unmatched-pattern --fix",
-    "test": "npm run lint && jest"
+    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(okmr-ui)/)'"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "lint-staged": {
-    "*.{js,ts,tsx,css,json,md}": [
-      "prettier --write",
-      "git add"
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --ext=jsx,ts,tsx src"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged",
+      "pre-push": "cross-env CI=true react-scripts test --env=jsdom"
+    }
   },
   "browserslist": {
     "production": [
@@ -68,7 +87,8 @@
   },
   "devDependencies": {
     "@ant-design/colors": "^6.0.0",
-    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
     "@storybook/addon-actions": "^6.3.0-alpha.13",
     "@storybook/addon-controls": "^6.0.16",
     "@storybook/addon-essentials": "^6.3.0-alpha.13",
@@ -83,7 +103,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
+    "@types/jest": "^26.0.23",
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
@@ -94,8 +114,6 @@
     "@types/styled-components": "^5.1.3",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.0.1",
-    "antd": "^4.15.0",
-    "babel-loader": "^8.1.0",
     "copyfiles": "^2.4.0",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "8.2.0",
@@ -108,15 +126,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^3.0.0",
     "jest": "24.8.0",
-    "npm": "^7.10.0",
-    "onchange": "6.0.0",
-    "prettier": "1.18.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-is": "^16.13.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4",
-    "styled-components": "^5.2.0",
-    "typescript": "^4.0.3"
+    "jest-fetch-mock": "^3.0.3",
+    "jest-teamcity-reporter": "^0.9.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^1.11.1"
   }
 }

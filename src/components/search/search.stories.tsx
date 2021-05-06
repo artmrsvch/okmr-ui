@@ -18,7 +18,6 @@ import {
   Subtitle,
   Title
 } from '@storybook/addon-docs/blocks';
-import Button from './index';
 import CustomizedSearch from './index';
 import { xs } from '../../config/breakpoints';
 
@@ -95,7 +94,9 @@ Default.argTypes = {
 
 export const CutomizedButtonWithIcon = () => (
   <CustomizedSearch
-    prefix={React.createElement(icons[select('префикс', Object.keys(icons), Object.keys(icons)[0])])}
+    prefix={React.createElement(
+      icons[select('префикс', Object.keys(icons), Object.keys(icons)[0])]
+    )}
     type={select('тип', { primary: 'primary', default: 'default', link: 'link' }, 'primary')}
     danger={boolean('Danger', false)}
     shape={nullify(select('форма', { circle: 'circle', round: 'round', default: null }, null))}

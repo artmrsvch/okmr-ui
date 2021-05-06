@@ -1,6 +1,5 @@
-import styled from 'styled-components'
-import {Input, InputProps} from 'antd'
-
+import styled from 'styled-components';
+import { Input, InputProps } from 'antd';
 
 const { Search } = Input;
 
@@ -9,7 +8,6 @@ export interface StyledAntdInputProps
   __ANT_INPUT: boolean;
   Group: any;
 }
+export interface StyledSearchInfo {}
 
-export const StyledSearch = styled(Search as StyledAntdInputProps)<{}>`
-
-`
+export const StyledSearch = styled(Search as StyledAntdInputProps)<StyledSearchInfo>``;

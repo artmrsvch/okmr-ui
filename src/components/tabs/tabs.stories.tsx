@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { select, boolean,
-  withKnobs } from '@storybook/addon-knobs';
+import { select, boolean, withKnobs } from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
 import { action } from '@storybook/addon-actions';
-import {Colors} from '../../config/colors';
 import {
   ArgsTable,
   Description,
@@ -14,6 +12,7 @@ import {
   Subtitle,
   Title
 } from '@storybook/addon-docs/blocks';
+import { Colors } from '../../config/colors';
 import CustomTabs from './tabs';
 import { xs } from '../../config/breakpoints';
 
@@ -61,9 +60,7 @@ export default {
 
 const Template: Story = (args) => <CustomTabs {...args} />;
 
-
 const Default = Template.bind({});
-
 
 export const CustomTabsWith = () => {
   const OWNER_HASH = '#owner';
@@ -76,12 +73,31 @@ export const CustomTabsWith = () => {
       animated={boolean('animated', false)}
       onClick={action('onClick')}
       defaultActiveKey={select('ключ', ['#owner', '#company', '#notification'], '#notification')}
-      color={select('цвет', { blue : Colors.blue,  default: Colors.black, yellow : Colors.yellow, red : Colors.red, green : Colors.green }, Colors.blue )}
-      text={select('цвет текста', { default : Colors.black, white : '#FFFFFF' }, Colors.black)}
-      border={select('бордер', { blue : Colors.blue,  default: Colors.black, yellow : Colors.yellow, red : Colors.red, green : Colors.green }, Colors.blue )}
-      //tabPosition={select('позиционирование', ['top', 'left', 'bottom', 'right'], 'top')}
+      color={select(
+        'цвет',
+        {
+          blue: Colors.blue,
+          default: Colors.black,
+          yellow: Colors.yellow,
+          red: Colors.red,
+          green: Colors.green
+        },
+        Colors.blue
+      )}
+      text={select('цвет текста', { default: Colors.black, white: '#FFFFFF' }, Colors.black)}
+      border={select(
+        'бордер',
+        {
+          blue: Colors.blue,
+          default: Colors.black,
+          yellow: Colors.yellow,
+          red: Colors.red,
+          green: Colors.green
+        },
+        Colors.blue
+      )}
+      // tabPosition={select('позиционирование', ['top', 'left', 'bottom', 'right'], 'top')}
     >
-
       <TabPane tab="Данные основателя" key={OWNER_HASH}>
         <div>#owner</div>
       </TabPane>
@@ -93,4 +109,4 @@ export const CustomTabsWith = () => {
       </TabPane>
     </CustomTabs>
   );
-}
+};
