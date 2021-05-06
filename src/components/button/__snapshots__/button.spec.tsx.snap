@@ -1,3 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button Component Test renders a disabled button with prop disabled 1`] = `
+<Button
+  className="sc-bdnxRM fIvcYL"
+  disabled={true}
+>
+  Button Test
+</Button>
+`;
+
+exports[`Button Component Test renders button with a loading icon when prop loading is true 1`] = `
+<Button
+  className="sc-bdnxRM fIvcYL"
+  loading={true}
+>
+  Button Test
+</Button>
+`;
+
+exports[`Button Component Test renders ghost style with prop ghost 1`] = `
+<Button
+  className="sc-bdnxRM fIvcYL"
+  ghost={true}
+>
+  Button Test
+</Button>
+`;
+
+exports[`Button Component Test renders without child element 1`] = `
+<Button
+  className="sc-bdnxRM fIvcYL"
+>
+  Button Test
+</Button>
+`;
+
+exports[`Button Component Test simulates a click event 1`] = `
+<Button
+  className="sc-bdnxRM fIvcYL"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  Button Test
+</Button>
+`;
+
 exports[`Button matches snapshot: invisible 1`] = `ShallowWrapper {}`;
