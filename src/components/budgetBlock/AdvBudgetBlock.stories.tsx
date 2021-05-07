@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
+import { Form } from 'antd';
+import { withKnobs, number, boolean } from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
-import { action } from '@storybook/addon-actions';
 import {
   ArgsTable,
   Description,
@@ -13,7 +13,6 @@ import {
   Title
 } from '@storybook/addon-docs/blocks';
 import AdvBudgetFormBlock from './index';
-import { mockForm } from './AdvBudgetBlock';
 
 export default {
   title: 'Components/Блок управляющий рекламным бюджетом',
@@ -61,41 +60,47 @@ export default {
   }
 };
 const mockProps = {
-  form: {
-    setFieldsValue: () => null,
-    getFieldValue: () => null,
-    getFieldsValues: () => null
-  },
-  initialAdv: 0.05,
-  isProduct: false,
-  name: 'advBudget',
-  isEditing: false,
-  defaultForItem: 0.12
+  name: 'advBudgetPercent'
 };
 const mockPropsProduct = {
-  form: {
-    setFieldsValue: () => null,
-    getFieldValue: () => null,
-    getFieldsValues: () => null
-  },
-  initialAdv: 0.05,
-  isProduct: false,
-  name: 'advBudget',
-  isEditing: false,
-  defaultForItem: 0
+  name: 'advBudgetPercent'
 };
 const Template: Story = (args) => <AdvBudgetFormBlock {...args} />;
 
 const DefaultAdvBudgetFormBlock = Template.bind({});
 
-export const DefaultAdvBlockWithProps = () => (
-  <div style={{ display: 'flex', width: '500px' }}>
-    <AdvBudgetFormBlock {...mockProps} />
-  </div>
-);
+export const DefaultAdvBlockWithProps = () => {
+  const [form] = Form.useForm();
+  return (
+    <div style={{ display: 'flex', width: '500px' }}>
+      <Form form={form}>
+        <DefaultAdvBudgetFormBlock
+          form={form}
+          isEditing={boolean('редактирование', false)}
+          isProduct={boolean('продукт или услуга', false)}
+          defaultForItem={number('первоначальное значение РБ, от 0 до 1', 0.05)}
+          initialAdv={number('первоначальное значение РБ, от 0 до 1', 0.05)}
+          {...mockProps}
+        />
+      </Form>
+    </div>
+  );
+};
 
-export const DefaultAdvBlockWithPropsProductWithoutDefault = () => (
-  <div style={{ display: 'flex', width: '500px' }}>
-    <AdvBudgetFormBlock {...mockPropsProduct} />
-  </div>
-);
+export const DefaultAdvBlockWithPropsWithoutDefault = () => {
+  const [form] = Form.useForm();
+  return (
+    <div style={{ display: 'flex', width: '500px' }}>
+      <Form form={form}>
+        <AdvBudgetFormBlock
+          form={form}
+          {...mockPropsProduct}
+          defaultForItem={number('первоначальное значение РБ, от 0 до 1', 0)}
+          initialAdv={number('первоначальное значение РБ, от 0 до 1', 0.05)}
+          isEditing={boolean('редактирование', false)}
+          isProduct={boolean('продукт или услуга', false)}
+        />
+      </Form>
+    </div>
+  );
+};

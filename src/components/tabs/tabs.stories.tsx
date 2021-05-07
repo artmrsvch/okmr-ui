@@ -66,9 +66,8 @@ export const CustomTabsWith = () => {
   const OWNER_HASH = '#owner';
   const COMPANY_HASH = '#company';
   const NOTIFICATION_HASH = '#notification';
-  const defaultActiveKey = OWNER_HASH;
   return (
-    <CustomTabs
+    <Default
       onChange={action('onClick')}
       animated={boolean('animated', false)}
       onClick={action('onClick')}
@@ -107,6 +106,6 @@ export const CustomTabsWith = () => {
       <TabPane tab="Уведомления" key={NOTIFICATION_HASH}>
         <div>#notification</div>
       </TabPane>
-    </CustomTabs>
+    </Default>
   );
 };

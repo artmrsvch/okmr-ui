@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
-import { action } from '@storybook/addon-actions';
+
 import {
   ArgsTable,
   Description,
