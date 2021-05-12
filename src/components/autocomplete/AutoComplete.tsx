@@ -8,7 +8,7 @@ interface BaseAutoCompleteProps {
   isLoading: boolean;
   options: any[];
   onSearch: (query: string) => void;
-  isNotFoundContent?: string;
+  notFoundContent?: string;
 }
 
 const AutoComplete: FC<BaseAutoCompleteProps> = ({
@@ -17,7 +17,7 @@ const AutoComplete: FC<BaseAutoCompleteProps> = ({
   isLoading,
   options,
   onSearch,
-  isNotFoundContent
+  notFoundContent
 }) => (
   <>
     <Form.Item name={name} label={label}>
@@ -27,7 +27,7 @@ const AutoComplete: FC<BaseAutoCompleteProps> = ({
         labelInValue
         filterOption={false}
         loading={isLoading}
-        notFoundContent={isLoading ? <Spin size="small" /> : isNotFoundContent}
+        notFoundContent={isLoading ? <Spin size="small" /> : notFoundContent}
         showSearch
         onSearch={onSearch}
         options={options}

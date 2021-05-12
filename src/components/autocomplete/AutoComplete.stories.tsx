@@ -80,7 +80,7 @@ export const DefaultAutoCompleteCategoriesProducts = () => {
         label={text('Label', 'Поиск по категории товаров')}
         options={options}
         onSearch={onSearch}
-        isNotFoundContent="Введите название категории"
+        notFoundContent="Введите название категории"
       />
     </div>
   );
@@ -99,7 +99,7 @@ export const DefaultAutoCompleteCategoriesServices = () => {
         label={text('Label', 'Поиск по категории услуг')}
         options={createObjectWithLabel(serviceCategoriesList)}
         onSearch={onSearch}
-        isNotFoundContent="Введите название категории"
+        notFoundContent="Введите название категории"
       />
     </div>
   );
