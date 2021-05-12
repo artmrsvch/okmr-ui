@@ -1,7 +1,6 @@
 import React, { FC, useState, memo } from 'react';
 import { Button, Checkbox, Col, Form, InputNumber, Tooltip } from 'antd';
 import { FormInstance } from 'rc-field-form';
-import 'antd/dist/antd.css';
 import styled from 'styled-components';
 import Icon, { InfoCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { CheckboxStyle } from '../checkbox/styled';

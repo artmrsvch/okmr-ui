@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { InputNumber, Tooltip } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { SmallFormItemInput } from './styled';
-import 'antd/dist/antd.css';
 
 export interface InputNumberFormProps {
   isProduct: boolean;
