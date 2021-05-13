@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Story } from '@storybook/react';
 import { Form } from 'antd';
 import { withKnobs, number, boolean } from '@storybook/addon-knobs';
-import 'antd/lib/button/style/index.css';
 import {
   ArgsTable,
   Description,

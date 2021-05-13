@@ -3,7 +3,6 @@ import { Button, Checkbox, Col, Form, InputNumber, Tooltip } from 'antd';
 import { FormInstance } from 'rc-field-form';
 import styled from 'styled-components';
 import Icon, { InfoCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import { CheckboxStyle } from '../checkbox/styled';
 import { BudgetContainer, SmallFormItemInput, StyledTooltip } from './styled';
 
 interface AdvBudgetFormBlockProps {
@@ -205,7 +204,7 @@ const AdvBudgetFormBlock: FC<AdvBudgetFormBlockProps> = ({
               name="isPriorityAdvBudget"
               valuePropName="checked"
               initialValue={false}>
-              <CheckboxStyle>
+              <Checkbox>
                 Приоритет рекламного бюджета
                 <Tooltip
                   color="white"
@@ -216,7 +215,7 @@ const AdvBudgetFormBlock: FC<AdvBudgetFormBlockProps> = ({
                   }>
                   <ColorizedIcon component={InfoCircleOutlined as any} />
                 </Tooltip>
-              </CheckboxStyle>
+              </Checkbox>
             </FormItemCheckbox>
           )}
         </div>
