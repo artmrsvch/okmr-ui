@@ -1,7 +1,27 @@
 import styled from 'styled-components';
-import { Form, Tooltip } from 'antd';
+import { Form, Button } from 'antd';
+import Icon from '@ant-design/icons';
 import { xs } from '../../config/breakpoints';
-import 'antd/lib/button/style/index.css';
+
+export const FormItemCheckbox = styled(Form.Item)`
+  margin-left: 5px;
+
+  .ant-form-item-control {
+    justify-content: flex-end;
+  }
+`;
+
+export const ButtonWithMargin = styled(Button)`
+  margin-left: 15px;
+`;
+export const BlackShiftContainer = styled.div`
+  color: black;
+`;
+
+export const ColorizedIcon = styled(Icon)`
+  color: #1890ff;
+  margin-left: 5px;
+`;
 
 export const BudgetContainer = styled.div`
   display: inline-flex;
@@ -65,11 +85,5 @@ export const SmallFormItemInput = styled(Form.Item)`
       font-size: 12px;
       font-weight: bold;
     }
-  }
-`;
-export const StyledTooltip = styled(Tooltip)`
-  .ant-tooltip-inner {
-    background-color: green;
-    width: 200px;
   }
 `;

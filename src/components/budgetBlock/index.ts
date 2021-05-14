@@ -1,3 +1,3 @@
-import AdvBudgetFormBlock from './AdvBudgetBlock';
+import { AdvBudgetFormBlock } from './AdvBudgetFormBlock';
 
 export default AdvBudgetFormBlock;

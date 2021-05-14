@@ -58,15 +58,16 @@ export default {
     }
   }
 };
-const mockProps = {
-  name: 'advBudgetPercent'
+const Template: Story = (args) => {
+  const [form] = Form.useForm();
+  return (
+    <Form form={form}>
+      <AdvBudgetFormBlock form={form} {...args} />
+    </Form>
+  );
 };
-const mockPropsProduct = {
-  name: 'advBudgetPercent'
-};
-const Template: Story = (args) => <AdvBudgetFormBlock {...args} />;
 
-const DefaultAdvBudgetFormBlock = Template.bind({});
+export const DefaultAdvBudgetFormBlock = Template.bind({});
 
 export const DefaultAdvBlockWithProps = () => {
   const [form] = Form.useForm();
@@ -74,12 +75,13 @@ export const DefaultAdvBlockWithProps = () => {
     <div style={{ display: 'flex', width: '500px' }}>
       <Form form={form}>
         <DefaultAdvBudgetFormBlock
+          name="advBudgetPercent"
           form={form}
           isEditing={boolean('редактирование', false)}
+          min={number('минимальное значение', 1)}
           isProduct={boolean('продукт или услуга', false)}
           defaultForItem={number('первоначальное значение РБ, от 0 до 1', 0.05)}
           initialAdv={number('первоначальное значение РБ, от 0 до 1', 0.05)}
-          {...mockProps}
         />
       </Form>
     </div>
@@ -91,13 +93,14 @@ export const DefaultAdvBlockWithPropsWithoutDefault = () => {
   return (
     <div style={{ display: 'flex', width: '500px' }}>
       <Form form={form}>
-        <AdvBudgetFormBlock
+        <DefaultAdvBudgetFormBlock
           form={form}
-          {...mockPropsProduct}
+          name="advBudgetPercent"
           defaultForItem={number('первоначальное значение РБ, от 0 до 1', 0)}
           initialAdv={number('первоначальное значение РБ, от 0 до 1', 0.05)}
           isEditing={boolean('редактирование', false)}
           isProduct={boolean('продукт или услуга', false)}
+          min={number('минимальное значение', 1)}
         />
       </Form>
     </div>
