@@ -40,16 +40,16 @@ const generateTitleText = (role: Role, isPartner?: boolean) => {
 
 export type AsideMenuProps = Pick<
   DashboardLayoutProps,
-  'role' | 'isPartner' | 'links' | 'externalLinks' | 'isHasSupplierStatus'
+  'userRole' | 'isPartner' | 'links' | 'externalLinks' | 'isHasSupplierStatus'
 >;
 export type ExternalLinkListProps = Pick<DashboardLayoutProps, 'links'>;
 export type LinkListProps = Pick<DashboardLayoutProps, 'links' | 'isHasSupplierStatus'>;
-export type NavigationProps = Omit<AsideMenuProps, 'isPartner' | 'role'>;
+export type NavigationProps = Omit<AsideMenuProps, 'isPartner' | 'userRole'>;
 
 const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
   <NavigationList>
-    {links.map((link: any, iter : number) => (
-      <NavigationItem key={`${link.to+iter}`}>
+    {links.map((link: any, iter: number) => (
+      <NavigationItem key={`${link.to + iter}`}>
         <NavigationExternalLink href={link.to}>
           {link.icon}
           <NavigationLinkText className="navigation-link-text">{link.text}</NavigationLinkText>
@@ -75,14 +75,14 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
       event.preventDefault();
       modal.error(modalConfig);
 
-      return false
+      return false;
     }
 
     const isMobileWidth = window.matchMedia(`(max-width: ${md})`).matches;
 
     if (isMobileWidth) {
-      const expander = document.getElementById(toggleId) as HTMLInputElement
-      expander.checked = false
+      const expander = document.getElementById(toggleId) as HTMLInputElement;
+      expander.checked = false;
     }
     return true;
   };
@@ -100,7 +100,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   );
 
   return (
-    <nav style={{ flex: 1 }} >
+    <nav style={{ flex: 1 }}>
       <NavigationList>
         {sortedLinks.map((link) => (
           <NavigationItem
@@ -112,7 +112,10 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
               to={link.to}
               disabled={!isHasSupplierStatus && link.supplierOnly}
               onClick={(e: any) => onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), e)}>
-              <NavigationLinkContent className={link.additionalWidget ? 'navigation-link__content--with-widget' : undefined}>
+              <NavigationLinkContent
+                className={
+                  link.additionalWidget ? 'navigation-link__content--with-widget' : undefined
+                }>
                 <NavigationLinkIcon className="navigation-link-icon">
                   {link.icon}
                 </NavigationLinkIcon>
@@ -120,7 +123,11 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
                   {link.text}
                 </NavigationLinkText>
               </NavigationLinkContent>
-              {link.additionalWidget && <WidgetWrapper className="navigation-link__widget">{link.additionalWidget}</WidgetWrapper>}
+              {link.additionalWidget && (
+                <WidgetWrapper className="navigation-link__widget">
+                  {link.additionalWidget}
+                </WidgetWrapper>
+              )}
             </NavigationLink>
           </NavigationItem>
         ))}
@@ -156,7 +163,7 @@ const CloseIcon = () => (
 );
 
 const AsideMenu: React.FC<AsideMenuProps> = ({
-  role,
+  userRole,
   isPartner,
   isHasSupplierStatus,
   externalLinks,
@@ -167,7 +174,7 @@ const AsideMenu: React.FC<AsideMenuProps> = ({
       <AsideLogo>
         <InlineFlexDiv href="/" className="aside-menu__logo">
           <Logo />
-          <AsideHeadlineRole>{generateTitleText(role, isPartner)}</AsideHeadlineRole>
+          <AsideHeadlineRole>{generateTitleText(userRole, isPartner)}</AsideHeadlineRole>
         </InlineFlexDiv>
 
         <a href="/" className="aside-menu__mini-logo">
