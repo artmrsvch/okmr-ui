@@ -55,7 +55,7 @@ export const AdvBudgetFormBlock: FC<AdvBudgetFormBlockProps> = ({
       });
     } else if (!value && !defaultForItem) {
       form.setFieldsValue({
-        advBudgetPercent: Number(process.env.REACT_APP_MIN_ADVBUDGET)
+        advBudgetPercent: min
       });
     } else form.setFieldsValue({ isPriorityAdvBudget: true });
   };
