@@ -93,7 +93,7 @@ Default.argTypes = {
   }
 };
 
-export const CutomizedButtonWithIcon = () => (
+export const CustomizedButtonWithIcon = () => (
   <CustomizedButton
     icon={React.createElement(icons[select('префикс', Object.keys(icons), Object.keys(icons)[0])])}
     type={select('тип', { primary: 'primary', default: 'default', link: 'link' }, 'primary')}

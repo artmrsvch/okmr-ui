@@ -1,4 +1,11 @@
-export { default as ArrowLeft } from './ArrowLeft'
-export { default as Logo } from './Logo'
-export { default as LogoMin } from './LogoMin'
-export { default as QuestionCircle } from './QuestionCircle'
+export { default as ArrowLeft } from './ArrowLeft';
+export { default as ArrowRight } from './ArrowRight';
+export { default as ChainSmall } from './ChainSmall';
+export { default as CloudSmall } from './CloudSmall';
+export { default as Facebook } from './Facebook';
+export { default as Instagram } from './Instagram';
+export { default as Logo } from './Logo';
+export { default as LogoMin } from './LogoMin';
+export { default as Ok } from './Ok';
+export { default as Present } from './Present';
+export { default as QuestionCircle } from './QuestionCircle';
