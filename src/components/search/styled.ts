@@ -1,12 +1,9 @@
 import styled from 'styled-components';
-import { Input, InputProps, Button } from 'antd';
+import { Input, Button } from 'antd';
+import { SearchProps } from 'antd/lib/input';
 
 const { Search } = Input;
-
-export interface StyledAntdInputProps
-  extends React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>> {
-  __ANT_INPUT: boolean;
-  Group: any;
+export interface StyledAntdInputProps extends SearchProps {
   enterButton: React.ReactNode | string;
 }
 
