@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 import { InputNumber, Tooltip } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Rule } from 'antd/lib/form';
 import { SmallFormItemInput } from './styled';
 
 export interface InputNumberFormProps {
   isProduct: boolean;
   name: string;
-  rules?: () => void;
+  rules?: Rule[];
   cbHandleChange: (value: number) => void;
   tooltipTextProduct?: string;
   tooltipText?: string;

@@ -6,7 +6,7 @@ interface BudgetWithInitialsProps {
   defaultForItem?: number;
   handleChangeGeneralValue: (inputAdvBudgetValue: number) => void;
   form: FormInstance;
-  name?: string;
+  name: string;
 }
 
 const BudgetWithInitials: FC<BudgetWithInitialsProps> = ({

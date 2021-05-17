@@ -9,7 +9,7 @@ export interface AdvBudgetFormBlockProps {
   initialAdv?: number;
   isProduct?: boolean;
   isEditing?: boolean;
-  name?: string;
+  name: string;
   form: FormInstance;
   defaultForItem?: number;
   min?: number;

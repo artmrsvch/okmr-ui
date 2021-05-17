@@ -9,7 +9,7 @@ import ServicePriorityBlock from './ServicePriorityBlock';
 interface BudgetWithoutInitialsProps {
   isProduct?: boolean;
   rules: any[];
-  name?: string;
+  name: string;
   handleChangeAdvBudget: (value?: number | string | null) => void;
   min?: number;
 }

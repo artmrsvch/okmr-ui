@@ -7,10 +7,10 @@ export interface StyledAntdInputProps
   extends React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>> {
   __ANT_INPUT: boolean;
   Group: any;
+  enterButton: React.ReactNode | string;
 }
-export interface StyledSearchInfo {}
 
-export const StyledSearch = styled(Search as StyledAntdInputProps)<StyledSearchInfo>``;
+export const StyledSearch = styled(Search)<StyledAntdInputProps>``;
 
 export const ButtonCenter = styled(Button)`
   font-size: 20px;
