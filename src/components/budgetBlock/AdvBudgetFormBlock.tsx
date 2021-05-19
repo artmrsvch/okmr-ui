@@ -9,7 +9,7 @@ export interface AdvBudgetFormBlockProps {
   initialAdv?: number;
   isProduct?: boolean;
   isEditing?: boolean;
-  name?: string;
+  name: string;
   form: FormInstance;
   defaultForItem?: number;
   min?: number;
@@ -55,7 +55,7 @@ export const AdvBudgetFormBlock: FC<AdvBudgetFormBlockProps> = ({
       });
     } else if (!value && !defaultForItem) {
       form.setFieldsValue({
-        advBudgetPercent: Number(process.env.REACT_APP_MIN_ADVBUDGET)
+        advBudgetPercent: min
       });
     } else form.setFieldsValue({ isPriorityAdvBudget: true });
   };

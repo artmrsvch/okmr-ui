@@ -1,4 +1,4 @@
-import { Form, Radio } from 'antd';
+import { Radio } from 'antd';
 import styled from 'styled-components';
 import { xs } from '../../config/breakpoints';
 

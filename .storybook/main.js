@@ -8,5 +8,14 @@ module.exports = {
     'storybook-addon-designs',
     'storybook-addon-pseudo-states',
     '@storybook/preset-ant-design'
-  ]
+  ],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false
+      }
+    }
+  }
 };

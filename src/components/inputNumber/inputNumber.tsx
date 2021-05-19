@@ -1,15 +1,17 @@
 import React, { FC } from 'react';
 import { InputNumber, Tooltip } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
+import { Rule } from 'antd/lib/form';
 import { SmallFormItemInput } from './styled';
 
 export interface InputNumberFormProps {
   isProduct: boolean;
   name: string;
-  rules?: () => void;
+  rules?: Rule[];
   cbHandleChange: (value: number) => void;
   tooltipTextProduct?: string;
   tooltipText?: string;
+  min: string | number;
 }
 
 const InputNumberForm: FC<InputNumberFormProps> = ({
@@ -18,14 +20,15 @@ const InputNumberForm: FC<InputNumberFormProps> = ({
   rules,
   cbHandleChange,
   tooltipTextProduct,
-  tooltipText
+  tooltipText,
+  min
 }) => (
   <SmallFormItemInput
     colon={false}
     label={
       isProduct ? (
         <span>
-          Рекламный бюджет от {Number(process.env.REACT_APP_MIN_ADVBUDGET || 1)}% до 90% &nbsp;
+          Рекламный бюджет от {Number(min) || 1}% до 90% &nbsp;
           <Tooltip title={tooltipTextProduct}>
             <QuestionCircleOutlined />
           </Tooltip>{' '}
@@ -45,7 +48,7 @@ const InputNumberForm: FC<InputNumberFormProps> = ({
       style={{ width: '100%' }}
       size={isProduct ? 'small' : 'middle'}
       precision={1}
-      min={Number(process.env.REACT_APP_MIN_ADVBUDGET || 1)}
+      min={Number(min) || 1}
       max={90}
       formatter={(value: any) => `${value}%`}
       parser={(value: any) => value.replace('%', '')}
