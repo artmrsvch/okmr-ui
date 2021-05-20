@@ -19,7 +19,7 @@ import {
   Title
 } from '@storybook/addon-docs/blocks';
 import Button from './index';
-import CustomizedButton from './customized';
+import CustomizedButton from 'src/components/button/customized';
 import { xs } from '../../config/breakpoints';
 
 export default {

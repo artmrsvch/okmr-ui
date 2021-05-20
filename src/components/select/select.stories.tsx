@@ -12,7 +12,7 @@ import {
   Subtitle,
   Title
 } from '@storybook/addon-docs/blocks';
-import CustomSelect from './select';
+import CustomSelect from 'src/components/select/select';
 
 export default {
   title: 'Components/Селект с кастомными пропсами',
