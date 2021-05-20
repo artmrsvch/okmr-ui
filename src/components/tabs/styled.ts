@@ -3,15 +3,20 @@ import { Tabs } from 'antd';
 import 'antd/dist/antd.css';
 import { xs } from '../../config/breakpoints';
 
+interface TabsOwnProps {
+  text: string;
+  border: string;
+}
+
 export const CustomTabs = styled(Tabs)`
   .ant-tabs-tab {
     display: block;
     text-align: center;
     background-color: white;
-    color: ${(props) => props.text || 'black'};
+    color: ${(props: TabsOwnProps) => props.text || 'black'};
     border: 1px solid;
     border-radius: 4px;
-    border-color: ${(props) =>
+    border-color: ${(props: TabsOwnProps) =>
       props.border === 'default' ? '#999999' : props.border || '#1890ff'};
     padding: 4px;
     margin: 0 10px 0 0;

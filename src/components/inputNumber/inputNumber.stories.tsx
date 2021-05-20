@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text } from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
 
 import {
@@ -68,6 +68,6 @@ const DefaultInputNumberForm = Template.bind({});
 
 export const InputNumberFormWithProps = () => (
   <div style={{ display: 'flex', width: '400px' }}>
-    <DefaultInputNumberForm {...mockProps} />
+    <DefaultInputNumberForm label={text('Label', 'Введите число')} {...mockProps} />
   </div>
 );

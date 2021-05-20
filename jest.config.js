@@ -1,8 +1,13 @@
 const { defaults } = require('jest-config');
+const { jsWithBabel: tsjPreset } = require('ts-jest/presets');
 
 module.exports = {
   preset: 'ts-jest',
   modulePaths: ['node_modules', '<rootDir>/src'],
+  transform: {
+    ...tsjPreset.transform,
+    '^.+\\.tsx?$': 'babel-jest'
+  },
   testEnvironment: 'node',
   verbose: true,
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],

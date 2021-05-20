@@ -11,6 +11,15 @@ module.exports = {
     'storybook-addon-pseudo-states',
     '@storybook/preset-ant-design'
   ],
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false
+      }
+    }
+  },
   webpackFinal: async (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), path.resolve(__dirname, '../src')];
 
