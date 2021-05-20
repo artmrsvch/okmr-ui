@@ -11,7 +11,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import CustomSelect from 'src/components/select/select';
 
 export default {

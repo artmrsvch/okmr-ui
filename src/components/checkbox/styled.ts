@@ -1,15 +1,7 @@
 import styled from 'styled-components';
-import { Checkbox as AntdCheckbox } from 'antd';
-import { CheckboxProps } from 'antd/lib/checkbox/Checkbox';
-import * as React from 'react';
+import { Checkbox } from 'antd';
 
-export interface CheckboxStyleProps
-  extends React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>> {
-  __ANT_CHECKBOX: boolean;
-  Group: any;
-}
-
-export const CheckboxStyle = styled(AntdCheckbox as CheckboxStyleProps)`
+export const StyledCheckbox = styled(Checkbox)`
   margin-top: 2px;
   .ant-checkbox-inner {
     border-radius: 3px;

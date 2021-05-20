@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Story } from '@storybook/react/types-6-0';
 import 'antd/lib/checkbox/style/index.css';
 
-import Checkbox from './index';
+import Checkbox from 'src/components/checkbox/index';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Components/Чекбокс',
   component: Checkbox
 };
 
@@ -18,12 +18,12 @@ Default.args = {
 };
 
 export const Disabled = () => (
-    <>
-      <label htmlFor="checkbox-disabled" title="Не активный" style={{ marginRight: '20px' }}>
-        <Checkbox id="checkbox-disabled" disabled />
-      </label>
-      <label htmlFor="checkbox" title="Активный">
-        <Checkbox id="checkbox" disabled checked />
-      </label>
-    </>
-  );
+  <>
+    <label htmlFor="checkbox-disabled" title="Не активный" style={{ marginRight: '20px' }}>
+      <Checkbox id="checkbox-disabled" disabled />
+    </label>
+    <label htmlFor="checkbox" title="Активный">
+      <Checkbox id="checkbox" disabled checked />
+    </label>
+  </>
+);

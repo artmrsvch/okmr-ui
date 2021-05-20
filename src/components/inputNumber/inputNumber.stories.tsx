@@ -11,7 +11,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import InputNumberForm from './inputNumber';
 
 export default {

@@ -17,8 +17,8 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
-import Button from './index';
+} from '@storybook/addon-docs';
+import Button from 'src/components/button/index';
 import CustomizedButton from 'src/components/button/customized';
 import { xs } from '../../config/breakpoints';
 

@@ -12,7 +12,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import RqTypeRadio from './rqType';
 
 export default {

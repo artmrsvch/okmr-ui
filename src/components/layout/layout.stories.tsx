@@ -9,7 +9,7 @@ import {
   Stories,
   Subtitle as DocsSubtitle,
   Title as DocsTitle
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import { Tooltip } from 'antd';
 import Layout from './index';
 import SvgArrowLeft from '../../icons/ArrowLeft';
