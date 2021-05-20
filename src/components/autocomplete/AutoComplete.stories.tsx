@@ -97,7 +97,7 @@ export const DefaultAutoCompleteCategoriesServices = () => {
       <DefaultAutoComplete
         name="categories"
         label={text('Label', 'Поиск по категории услуг')}
-        options={createObjectWithLabel(serviceCategoriesList)}
+        options={createObjectWithLabel(serviceCategoriesList) || options}
         onSearch={onSearch}
         notFoundContent="Введите название категории"
       />

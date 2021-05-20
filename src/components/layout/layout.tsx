@@ -1,10 +1,8 @@
 import React, { ReactNode } from 'react';
-import { Tooltip } from 'antd';
 import { Container, Content, Workspace, CheckedInput, ContentWrap } from './styled';
 import Header from './header/header';
 import Navigation from './aside-menu/navigation';
 import { toggleId } from './utils';
-import logoMin from '../../icons/logoMin.svg';
 
 export type Role = 'admin' | 'accountant' | 'supplierModerator' | 'user' | 'supplier';
 

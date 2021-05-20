@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Story } from '@storybook/react';
 import { select, text, boolean, withKnobs } from '@storybook/addon-knobs';
 import { Rule } from 'antd/lib/form';
 import 'antd/lib/button/style/index.css';
@@ -61,8 +60,6 @@ export default {
   }
 };
 
-const Template: Story = (args) => <CustomSelect {...args} />;
-
 const customRules: Rule[] = [
   {
     required: true,
@@ -80,9 +77,8 @@ const options = [
 const valuesArray = ['KILOGRAM', 'UNIT', 'METER', 'LITER', 'GRAM'];
 const modeArray = ['multiple', 'tags'];
 const sizeArray = ['large', 'middle', 'small'];
-const Default = Template.bind({});
 
-export const CutomizedButtonWithIcon = () => (
+export const CustomSelectWithProps = () => (
   <CustomSelect
     name="customSelect"
     label={text('лейбл', 'Кастомизированный селект')}
