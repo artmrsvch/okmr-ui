@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Story } from '@storybook/react';
 import { Form } from 'antd';
-import { boolean, withKnobs, select } from '@storybook/addon-knobs';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 import 'antd/lib/button/style/index.css';
-import { action } from '@storybook/addon-actions';
 import {
   ArgsTable,
   Description,
@@ -12,7 +11,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import RqTypeRadio from './rqType';
 
 export default {

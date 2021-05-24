@@ -1,11 +1,9 @@
 const { defaults } = require('jest-config');
-//const { defaults as tsjPreset } = require('ts-jest/presets')
-//const { defaults: tsjPreset } = require('ts-jest/presets')
-// onst { jsWithTs: tsjPreset } = require('ts-jest/presets')
 const { jsWithBabel: tsjPreset } = require('ts-jest/presets');
 
 module.exports = {
   preset: 'ts-jest',
+  modulePaths: ['node_modules', '<rootDir>/src'],
   transform: {
     ...tsjPreset.transform,
     '^.+\\.tsx?$': 'babel-jest'
@@ -17,7 +15,8 @@ module.exports = {
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/tests/__mocks__/fileMock.js',
-    '\\.(css|less)$': '<rootDir>/tests/__mocks__/cssMock.js'
+    '\\.(css|less)$': '<rootDir>/tests/__mocks__/cssMock.js',
+    'src/(.*)': '<rootDir>/src/$1'
   },
   transformIgnorePatterns: ['node_modules/[^/]+?/(?!(es|node_modules)/)']
 };
