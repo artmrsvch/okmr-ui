@@ -17,7 +17,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import CustomizedSearch from './index';
 import { ButtonCenter } from './styled';
 import { xs } from '../../config/breakpoints';

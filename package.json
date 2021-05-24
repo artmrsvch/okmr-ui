@@ -4,6 +4,7 @@
   "private": false,
   "license": "MIT",
   "main": "lib/index.js",
+  "baseUrl": "./src/",
   "directories": {
     "lib": "lib"
   },

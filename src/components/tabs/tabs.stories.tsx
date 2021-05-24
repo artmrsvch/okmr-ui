@@ -10,7 +10,7 @@ import {
   Stories,
   Subtitle,
   Title
-} from '@storybook/addon-docs/blocks';
+} from '@storybook/addon-docs';
 import { Colors } from '../../config/colors';
 import CustomTabs from './tabs';
 import { xs } from '../../config/breakpoints';

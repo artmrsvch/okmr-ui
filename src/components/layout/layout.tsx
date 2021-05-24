@@ -14,7 +14,6 @@ export interface NavigationLink {
   visibility?: boolean;
   additionalWidget?: React.ReactNode;
   isActive?: boolean;
-
   // suppler
   supplierOnly?: boolean;
   hidden?: boolean;
@@ -27,7 +26,7 @@ export interface DashboardLayoutProps {
   isPartner?: boolean;
   externalLinks?: NavigationLink[];
   links: NavigationLink[];
-  role: Role;
+  userRole: Role;
 }
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({
@@ -38,22 +37,22 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   isHasSupplierStatus,
   isPartner,
   externalLinks,
-  role
+  userRole
 }) => (
-    <Container>
-      <CheckedInput className="navigation-toggle" type="checkbox" id={toggleId} />
-      <Navigation
-        role={role}
-        isHasSupplierStatus={isHasSupplierStatus}
-        externalLinks={externalLinks}
-        links={links}
-        isPartner={isPartner}
-      />
-      <Workspace className="dashboard-workspace">
-        <Header htmlFor={toggleId} widgets={headerWidgets} />
-        <Content>{isWithoutContentWrap ? children : <ContentWrap>{children}</ContentWrap>}</Content>
-      </Workspace>
-    </Container>
-  );
+  <Container>
+    <CheckedInput className="navigation-toggle" type="checkbox" id={toggleId} />
+    <Navigation
+      userRole={userRole}
+      isHasSupplierStatus={isHasSupplierStatus}
+      externalLinks={externalLinks}
+      links={links}
+      isPartner={isPartner}
+    />
+    <Workspace className="dashboard-workspace">
+      <Header htmlFor={toggleId} widgets={headerWidgets} />
+      <Content>{isWithoutContentWrap ? children : <ContentWrap>{children}</ContentWrap>}</Content>
+    </Workspace>
+  </Container>
+);
 
 export default DashboardLayout;
