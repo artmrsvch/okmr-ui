@@ -7,7 +7,7 @@ import { toggleId } from './utils';
 export type Role = 'admin' | 'accountant' | 'supplierModerator' | 'user' | 'supplier';
 
 export interface NavigationLink {
-  text: string;
+  text: string | React.ReactNode;
   to: string;
   icon: React.ComponentElement<any, any>;
   roles?: Role[];
