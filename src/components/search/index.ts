@@ -1,3 +1,3 @@
-import CustomizedSearch from './search'
+import Search from './search';
 
-export default CustomizedSearch;
+export default Search;

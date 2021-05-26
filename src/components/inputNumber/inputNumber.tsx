@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { InputNumber, Tooltip } from 'antd';
+import { InputNumber as InputAntdNumber, Tooltip } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { Rule } from 'antd/lib/form';
 import { SmallFormItemInput } from './styled';
@@ -14,7 +14,7 @@ export interface InputNumberFormProps {
   min: string | number;
 }
 
-const InputNumberForm: FC<InputNumberFormProps> = ({
+const InputNumber: FC<InputNumberFormProps> = ({
   isProduct,
   name,
   rules,
@@ -44,7 +44,7 @@ const InputNumberForm: FC<InputNumberFormProps> = ({
     }
     name={name}
     rules={rules}>
-    <InputNumber
+    <InputAntdNumber
       style={{ width: '100%' }}
       size={isProduct ? 'small' : 'middle'}
       precision={1}
@@ -58,4 +58,4 @@ const InputNumberForm: FC<InputNumberFormProps> = ({
   </SmallFormItemInput>
 );
 
-export default InputNumberForm;
+export default InputNumber;

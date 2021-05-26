@@ -1,3 +1,3 @@
-import { CustomTabs } from './styled';
+import { CustomTabs as Tabs } from './styled';
 
-export default CustomTabs;
+export default Tabs;
