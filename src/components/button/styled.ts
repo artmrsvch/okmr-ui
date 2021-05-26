@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { Button, ButtonProps } from 'antd';
-import { Colors } from 'src/config/colors';
-import { xs } from 'src/config/breakpoints';
+import { Colors } from '../../config/colors';
+import { xs } from '../../config/breakpoints';
 
-interface CustomStyledButton extends ButtonProps {
+export interface CustomStyledButton extends ButtonProps {
   color?: 'orange' | 'green' | 'red' | 'lightBlue' | 'yellow' | 'blue';
 }
 
-export const StyledAtndButton = styled(Button)`
+export const StyledAtndButton = styled<any>(Button)`
   &,
   &:hover,
   &:active,
