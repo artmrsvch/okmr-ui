@@ -63,7 +63,12 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   const [modal, contextHolder] = Modal.useModal();
   const location = useLocation();
 
-  const onItemClick = (isProtectLink: boolean, event: React.MouseEvent) => {
+  const onItemClick = (isProtectLink: boolean, event: React.MouseEvent, callback?: () => void) => {
+    if (callback) {
+      event.preventDefault();
+      callback();
+    }
+
     if (isProtectLink) {
       const modalConfig = {
         title: 'Необходимо заполнить данные поставщика',
@@ -111,7 +116,9 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
               className="navigation-item__link"
               to={link.to}
               disabled={!isHasSupplierStatus && link.supplierOnly}
-              onClick={(e: any) => onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), e)}>
+              onClick={(e: any) =>
+                onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), e, link.onClick)
+              }>
               <NavigationLinkContent
                 className={
                   link.additionalWidget ? 'navigation-link__content--with-widget' : undefined

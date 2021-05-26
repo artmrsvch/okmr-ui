@@ -15,6 +15,7 @@ export interface NavigationLink {
   additionalWidget?: React.ReactNode;
   isActive?: boolean;
   // suppler
+  onClick?: () => void;
   supplierOnly?: boolean;
   hidden?: boolean;
 }
