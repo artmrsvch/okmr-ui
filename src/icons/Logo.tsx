@@ -26,7 +26,11 @@ const SvgLogo = ({ linkTo, ...restProps }) => {
         <div>
           <img alt="cart logo" src={CartLogo} />
         </div>
-        <Button type="link" style={{ display: 'inline-flex' }} href={linkTo}>
+        <Button
+          type="link"
+          noStyle
+          style={{ display: 'inline-flex', padding: '1px 0 1px 0', alignSelf: 'center' }}
+          href={linkTo}>
           <StyledLogoPart>
             <img alt="su" src={SuLogo} />
           </StyledLogoPart>
