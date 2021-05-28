@@ -28,6 +28,7 @@ export interface DashboardLayoutProps {
   externalLinks?: NavigationLink[];
   links: NavigationLink[];
   userRole: Role;
+  linkTo?: string;
 }
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({
@@ -38,11 +39,13 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   isHasSupplierStatus,
   isPartner,
   externalLinks,
-  userRole
+  userRole,
+  linkTo
 }) => (
   <Container>
     <CheckedInput className="navigation-toggle" type="checkbox" id={toggleId} />
     <Navigation
+      linkTo={linkTo}
       userRole={userRole}
       isHasSupplierStatus={isHasSupplierStatus}
       externalLinks={externalLinks}

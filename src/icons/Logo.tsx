@@ -1,22 +1,60 @@
-import * as React from 'react';
+import React, { FC } from 'react';
+import styled from 'styled-components';
+import CartLogo from 'src/icons/CartLogo.svg';
+import SuLogo from 'src/icons/SuLogo.svg';
+import WorldLogo from 'src/icons/WorldLogo.svg';
+import { Button } from '../components';
 
-function SvgLogo(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg width={132} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path
-        d="M37.043 19.94c3.408 0 6.139-1.534 6.139-4.68 0-2.813-2.205-3.58-6.139-4.501-2.004-.46-2.63-.588-2.63-1.253 0-.767.876-1.177 2.305-1.177 1.653 0 2.405.537 2.68 1.433h3.634c-.476-2.61-2.356-4.502-6.19-4.502-3.632 0-6.038 1.714-6.038 4.68 0 2.43 1.604 3.325 5.513 4.272 2.08.511 3.157.588 3.157 1.534 0 .768-.752 1.151-2.33 1.151-2.23 0-3.057-.767-3.333-1.892h-3.633c.5 3.094 3.182 4.936 6.865 4.936zM54.553 5.567v7.392c0 2.301-1.078 3.503-3.057 3.503-1.855 0-2.531-1.023-2.531-2.864v-8.03h-3.583v8.823c0 3.427 1.88 5.55 4.911 5.55 1.904 0 3.257-.819 4.26-2.251v1.944h3.583V5.567h-3.583zM78.113 5.627L76.96 10.05l-1.227 5.601-1.203-5.6-1.153-4.425h-4.284L67.94 10.05l-1.203 5.652-1.228-5.652-1.152-4.424h-3.558l3.783 14.066h4.135l1.278-4.731 1.002-5.704h.476l1.002 5.704 1.278 4.731h4.134l3.784-14.066h-3.558zM89.78 5.32c-3.959 0-7.166 3.094-7.166 7.34 0 4.22 3.157 7.34 7.166 7.34 4.034 0 7.191-3.095 7.191-7.34 0-4.246-3.207-7.34-7.191-7.34zm0 3.478c2.004 0 3.558 1.56 3.558 3.862 0 2.327-1.553 3.862-3.558 3.862s-3.558-1.535-3.558-3.862c0-2.302 1.553-3.862 3.558-3.862zM107.373 5.32c-1.954 0-3.457.92-4.309 2.762V5.627h-3.583v14.066h3.583v-6.266c0-3.325 1.954-4.348 4.234-4.348.401 0 .602.026.877.051V5.37a6.685 6.685 0 00-.802-.05zM110.15 19.693h3.583V0h-3.583v19.693zM127.083 0v7.596c-.952-1.356-2.405-2.276-4.36-2.276-3.532 0-6.264 2.992-6.264 7.34 0 4.322 2.706 7.34 6.29 7.34 1.929 0 3.382-.87 4.334-2.2v1.893h3.583V0h-3.583zm-3.533 16.522c-1.979 0-3.482-1.535-3.482-3.862 0-2.302 1.478-3.862 3.482-3.862 2.005 0 3.533 1.56 3.533 3.862 0 2.327-1.528 3.862-3.533 3.862z"
-        fill="#005DE2"
-      />
-      <path
-        d="M5.479 4.364C5.809 1.98 8.259 0 11.054 0c2.794 0 5.245 1.98 5.575 4.364h3.233c1.24 0 2.246.976 2.246 2.181 0 .104-.008.207-.023.309L20.16 22.127C20.003 23.202 19.055 24 17.938 24H4.17c-1.118 0-2.065-.798-2.223-1.873L.023 6.854C-.153 5.661.7 4.556 1.928 4.386a2.31 2.31 0 01.317-.022H5.48zm8.861 0c-.34-1.159-1.717-2.182-3.286-2.182-1.57 0-2.946 1.023-3.287 2.181h6.574zM2.245 6.545h3.196v2.181h2.245V6.546h6.735v2.181h2.245V6.546h3.196l-1.924 15.272H4.17L2.245 6.546z"
-        fill="#F47E1F"
-      />
-      <path
-        d="M13.37 13.091v-2.182h2.245v2.182H13.37zm1.43 2.507l1.837 1.255c-1.253 1.73-3.293 2.783-5.512 2.783-2.22 0-4.26-1.052-5.513-2.783l1.837-1.255a4.522 4.522 0 003.676 1.857c1.48 0 2.839-.701 3.675-1.857zm-8.166-4.689v2.182H8.88v-2.182H6.634z"
-        fill="#F47E1F"
-      />
-    </svg>
-  );
+const StyledLogoContainer = styled.div`
+  display: inline-flex;
+  height: 24px;
+  align-self: center;
+`;
+const StyledLogoPart = styled.div`
+  margin-top: 2.5px;
+  margin-left: 5px;
+`;
+
+interface SVGLogoProps {
+  linkTo?: string;
 }
+
+const SvgLogo: FC<SVGLogoProps> = ({ linkTo, ...restProps }) => {
+  if (linkTo) {
+    return (
+      <StyledLogoContainer {...restProps}>
+        <div>
+          <img alt="cart logo" src={CartLogo} />
+        </div>
+        <Button
+          type="link"
+          noStyle
+          style={{ display: 'inline-flex', padding: '1px 0 1px 0', alignSelf: 'center' }}
+          href={linkTo}>
+          <StyledLogoPart>
+            <img alt="su" src={SuLogo} />
+          </StyledLogoPart>
+          <div>
+            <img alt="world" src={WorldLogo} />
+          </div>
+        </Button>
+      </StyledLogoContainer>
+    );
+  }
+  return (
+    <StyledLogoContainer {...restProps}>
+      <div>
+        <img alt="cart logo" src={CartLogo} />
+      </div>
+
+      <StyledLogoPart>
+        <img alt="su" src={SuLogo} />
+      </StyledLogoPart>
+      <div>
+        <img alt="world" src={WorldLogo} />
+      </div>
+    </StyledLogoContainer>
+  );
+};
 
 export default SvgLogo;

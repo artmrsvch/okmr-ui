@@ -20,7 +20,13 @@
     "no-unused-vars": "off",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
-    "react/jsx-filename-extension": [1, { "allow": "as-needed" }],
+    "no-restricted-imports": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "allow": "as-needed"
+      }
+    ],
     "no-undef": 0,
     "jsx-a11y/label-has-associated-control": [
       2,
@@ -35,5 +41,12 @@
     "import/prefer-default-export": "off",
     "no-shadow": "off",
     "no-underscore-dangle": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }

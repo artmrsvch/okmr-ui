@@ -1,3 +1,6 @@
+export { default as CartLogo } from './CartLogo';
+export { default as SuLogo } from './SuLogo';
+export { default as WorldLogo } from './WorldLogo';
 export { default as ArrowLeft } from './ArrowLeft';
 export { default as ArrowRight } from './ArrowRight';
 export { default as ChainSmall } from './ChainSmall';

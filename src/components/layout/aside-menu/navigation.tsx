@@ -3,21 +3,21 @@ import { useLocation } from 'react-router-dom';
 import Modal from 'antd/lib/modal/Modal';
 import {
   Aside,
-  AsideHeadline,
-  AsideLogo,
   AsideCloseIcon,
+  AsideHeadline,
   AsideHeadlineRole,
+  AsideLogo,
   InlineFlexDiv,
-  NavigationWrapper,
-  NavigationItem,
-  NavigationList,
+  NavigationDivider,
   NavigationExternalLink,
+  NavigationItem,
   NavigationLink,
-  NavigationLinkText,
   NavigationLinkContent,
   NavigationLinkIcon,
-  WidgetWrapper,
-  NavigationDivider
+  NavigationLinkText,
+  NavigationList,
+  NavigationWrapper,
+  WidgetWrapper
 } from './styled';
 import LogoMin from '../../../icons/LogoMin';
 import Logo from '../../../icons/Logo';
@@ -40,7 +40,7 @@ const generateTitleText = (role: Role, isPartner?: boolean) => {
 
 export type AsideMenuProps = Pick<
   DashboardLayoutProps,
-  'userRole' | 'isPartner' | 'links' | 'externalLinks' | 'isHasSupplierStatus'
+  'userRole' | 'isPartner' | 'links' | 'externalLinks' | 'isHasSupplierStatus' | 'linkTo'
 >;
 export type ExternalLinkListProps = Pick<DashboardLayoutProps, 'links'>;
 export type LinkListProps = Pick<DashboardLayoutProps, 'links' | 'isHasSupplierStatus'>;
@@ -116,8 +116,8 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
               className="navigation-item__link"
               to={link.to}
               disabled={!isHasSupplierStatus && link.supplierOnly}
-              onClick={(e: any) =>
-                onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), e, link.onClick)
+              onClick={(event: React.MouseEvent) =>
+                onItemClick(!!(!isHasSupplierStatus && link.supplierOnly), event, link.onClick)
               }>
               <NavigationLinkContent
                 className={
@@ -174,13 +174,14 @@ const AsideMenu: React.FC<AsideMenuProps> = ({
   isPartner,
   isHasSupplierStatus,
   externalLinks,
-  links
+  links,
+  linkTo
 }) => (
   <Aside className="aside-menu">
     <AsideHeadline>
       <AsideLogo>
         <InlineFlexDiv href="/" className="aside-menu__logo">
-          <Logo />
+          <Logo linkTo={linkTo} />
           <AsideHeadlineRole>{generateTitleText(userRole, isPartner)}</AsideHeadlineRole>
         </InlineFlexDiv>
 

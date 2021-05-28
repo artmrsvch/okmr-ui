@@ -25,7 +25,8 @@ export const AsideHeadline = styled.div`
   height: 60px;
   flex: 1;
 `;
-export const AsideLogo = styled.a`
+export const AsideLogo = styled.div`
+  //a
   @media screen and (max-width: ${xl}) {
     display: flex;
     align-items: center;

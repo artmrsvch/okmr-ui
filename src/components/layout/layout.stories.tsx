@@ -10,6 +10,7 @@ import {
   Subtitle as DocsSubtitle,
   Title as DocsTitle
 } from '@storybook/addon-docs';
+import { select } from '@storybook/addon-knobs';
 import { Tooltip } from 'antd';
 import Layout from './index';
 import SvgArrowLeft from '../../icons/ArrowLeft';
@@ -345,6 +346,21 @@ DashboardLayout.argTypes = {
     }
   }
 };
+
+export const LayoutWithLink = () => (
+  <Template
+    userRole="admin"
+    isHasSupplierStatus
+    links={linksShort}
+    externalLinks
+    isPartner={false}
+    linkTo={select(
+      'вид ссылки',
+      ['https://www.google.com/', 'https://yandexdataschool.ru/', null],
+      'https://www.google.com/'
+    )}
+  />
+);
 
 const HeaderTemplate: Story = (args: any) => (
   <div
