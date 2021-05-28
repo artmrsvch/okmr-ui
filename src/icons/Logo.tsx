@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import CartLogo from 'src/icons/CartLogo.svg';
 import SuLogo from 'src/icons/SuLogo.svg';
@@ -19,7 +19,7 @@ interface SVGLogoProps {
   linkTo?: string;
 }
 
-const SvgLogo = ({ linkTo, ...restProps }) => {
+const SvgLogo: FC<SVGLogoProps> = ({ linkTo, ...restProps }) => {
   if (linkTo) {
     return (
       <StyledLogoContainer {...restProps}>
