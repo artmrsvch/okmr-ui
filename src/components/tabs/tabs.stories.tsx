@@ -14,7 +14,6 @@ import {
 import { Colors } from '../../config/colors';
 import CustomTabs from './tabs';
 import { xs } from '../../config/breakpoints';
-import 'antd/dist/antd.css';
 
 const { TabPane } = CustomTabs;
 
