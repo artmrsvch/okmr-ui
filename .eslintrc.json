@@ -20,6 +20,7 @@
     "no-unused-vars": "off",
     "import/no-unresolved": 0,
     "react/prop-types": "off",
+    "no-restricted-imports": "off",
     "react/jsx-filename-extension": [
       1,
       {
