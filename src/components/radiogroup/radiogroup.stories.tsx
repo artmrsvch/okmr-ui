@@ -17,7 +17,7 @@ export default {
   title: 'Components/Группа радио кнопок',
   component: RadioGroup,
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <div style={{ margin: '3em' }}>
         <Story />
       </div>
@@ -64,7 +64,8 @@ export const CustomizedRadioGroup = () => {
         required={boolean('required', false)}
         options={options}
         label={text('Label', 'Radio Group')}
-        name="type"
+        formItemName="type"
+        radioGropeName="type"
         disabled={boolean('disabled', false)}
       />
     </div>

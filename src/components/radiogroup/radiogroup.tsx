@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Form, Radio } from 'antd';
+import { Form } from 'antd';
 import { Rule } from 'antd/lib/form';
 import { StyledRadioGroup } from './styled';
 
@@ -8,9 +8,10 @@ type NamePath = string | number | (string | number)[];
 export interface RadioGroupProps {
   defaultValue?: string;
   disabled?: boolean;
-  style: React.CSSProperties;
-  name: NamePath;
-  rules: Rule[];
+  style?: React.CSSProperties;
+  formItemName: NamePath;
+  radioGropeName?: string;
+  rules?: Rule[];
   label: string | React.ReactNode;
   options: { label: string; value: string }[];
   required?: boolean;
@@ -18,7 +19,8 @@ export interface RadioGroupProps {
 const RadioGroup: FC<RadioGroupProps> = ({
   disabled,
   style,
-  name,
+  radioGropeName,
+  formItemName,
   label,
   options,
   required,
@@ -26,18 +28,21 @@ const RadioGroup: FC<RadioGroupProps> = ({
   defaultValue,
   ...props
 }) => {
-  if (required && !rules.length && !disabled) {
-    /* eslint-disable no-alert */
-    rules = [{ required: true, message: 'Обязательное поле' }] as Rule[];
-  }
+  const concatRules =
+    required && !rules?.length && !disabled
+      ? rules
+        ? [...rules, { required: true, message: 'Обязательное поле' }]
+        : [{ required: true, message: 'Обязательное поле' }]
+      : rules;
+
   return (
-    <Form.Item rules={rules} name={name} label={label}>
+    <Form.Item rules={concatRules} name={formItemName} label={label}>
       <StyledRadioGroup
         defaultValue={defaultValue}
         disabled={disabled}
         style={style}
         options={options}
-        name={name}
+        name={radioGropeName}
         {...props}
       />
     </Form.Item>
