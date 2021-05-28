@@ -1,5 +1,4 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import { Radio, Form } from 'antd';
 
 export interface NdsRadioProps {
