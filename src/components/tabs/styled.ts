@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Tabs } from 'antd';
 import { TabsProps } from 'antd/lib/tabs';
+
 import { xs } from '../../config/breakpoints';
 
 interface TabsOwnProps {

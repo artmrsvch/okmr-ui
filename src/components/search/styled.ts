@@ -9,6 +9,6 @@ export interface StyledAntdInputProps extends SearchProps {
 
 export const StyledSearch = styled(Search)<StyledAntdInputProps>``;
 
-export const ButtonCenter = styled(Button)`
+export const ButtonCenter = styled(Button as any)`
   font-size: 20px;
 `;

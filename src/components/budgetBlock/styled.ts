@@ -11,7 +11,7 @@ export const FormItemCheckbox = styled(Form.Item)`
   }
 `;
 
-export const ButtonWithMargin = styled(Button)`
+export const ButtonWithMargin = styled(Button as any)`
   margin-left: 15px;
 `;
 export const BlackShiftContainer = styled.div`

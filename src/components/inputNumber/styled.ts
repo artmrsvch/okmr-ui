@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Form } from 'antd';
-import 'antd/lib/button/style/index.css';
 import { xs } from '../../config/breakpoints';
 
 export const SmallFormItemInput = styled(Form.Item)`

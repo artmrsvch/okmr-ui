@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Checkbox } from 'antd';
 
-export const StyledCheckbox = styled(Checkbox)`
+export const StyledCheckbox = styled(Checkbox as any)`
   margin-top: 2px;
   .ant-checkbox-inner {
     border-radius: 3px;
