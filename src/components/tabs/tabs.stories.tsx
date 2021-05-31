@@ -94,7 +94,7 @@ export const CustomTabsWith = () => {
         },
         Colors.blue
       )}
-      // tabPosition={select('позиционирование', ['top', 'left', 'bottom', 'right'], 'top')}
+      tabPosition={select('позиционирование', ['top', 'left', 'bottom', 'right'], 'top')}
     >
       <TabPane tab="Данные основателя" key={OWNER_HASH}>
         <div>#owner</div>

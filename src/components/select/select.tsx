@@ -8,7 +8,7 @@ import { StyledFormItemItems, StyledStraightFormItem, FormItemVerticalLabel } fr
 
 const FormItem = Form.Item;
 
-interface CustomSelectProps {
+export interface CustomSelectProps {
   name: NamePath;
   label: string | React.ReactNode;
   rules?: Rule[];

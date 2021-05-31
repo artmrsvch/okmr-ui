@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import { Story } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import {
   ArgsTable,
@@ -62,10 +61,6 @@ export default {
     }
   }
 };
-
-// const Template: Story = (args) => <AutoComplete {...args} />;
-
-// const DefaultAutoComplete = Template.bind({});
 
 export const DefaultAutoCompleteCategoriesProducts = () => {
   const [options, setOptions] = React.useState<any[]>(createObjectWithLabel(productCategoriesList));
