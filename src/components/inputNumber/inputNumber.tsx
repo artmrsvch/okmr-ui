@@ -1,12 +1,9 @@
 import React, { FC } from 'react';
-import { InputNumber as InputAntdNumber, Tooltip } from 'antd';
-import { FormItemProps } from 'antd/lib/form';
-import { InputProps } from 'antd/lib/input';
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import { Rule } from 'antd/lib/form';
+import { InputNumber as InputAntdNumber, Tooltip } from 'antd';
+import { FormItemProps, Rule } from 'antd/lib/form';
+import { InputProps } from 'antd/lib/input';
 import { SmallFormItemInput } from './styled';
-
-
 
 export interface InputNumberFormProps {
   isProduct: boolean;
@@ -17,7 +14,7 @@ export interface InputNumberFormProps {
   tooltipText?: string;
   min: string | number;
 }
-export type FormInputNumberProps = FormItemProps & InputProps & InputNumberFormProps
+export type FormInputNumberProps = FormItemProps & InputProps & InputNumberFormProps;
 const InputNumber: FC<FormInputNumberProps> = ({
   isProduct,
   name,

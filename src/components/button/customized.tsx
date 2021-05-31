@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Button } from '../index';
 import { ButtonProps } from 'antd';
+import { Button } from '../index';
 
 export interface CustomizedButtonProps {
   suffix?: React.ReactNode | string;

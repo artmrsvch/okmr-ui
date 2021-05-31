@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Tabs } from 'antd';
 import { TabsProps } from 'antd/lib/tabs';
-import 'antd/dist/antd.css';
 import { xs } from '../../config/breakpoints';
 
 interface TabsOwnProps {
@@ -29,7 +28,7 @@ export const CustomTabs = styled(Tabs)`
   }
 
   .ant-tabs-tab-active {
-    background-color: ${(props : TabsCustomProps) => props.color || '#1890ff'};
+    background-color: ${(props: TabsCustomProps) => props.color || '#1890ff'};
   }
 
   .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
