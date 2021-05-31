@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Story } from '@storybook/react';
+// import { Story } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import {
   ArgsTable,
@@ -63,9 +63,9 @@ export default {
   }
 };
 
-const Template: Story = (args) => <AutoComplete {...args} />;
+// const Template: Story = (args) => <AutoComplete {...args} />;
 
-const DefaultAutoComplete = Template.bind({});
+// const DefaultAutoComplete = Template.bind({});
 
 export const DefaultAutoCompleteCategoriesProducts = () => {
   const [options, setOptions] = React.useState<any[]>(createObjectWithLabel(productCategoriesList));
@@ -75,7 +75,7 @@ export const DefaultAutoCompleteCategoriesProducts = () => {
   };
   return (
     <div style={{ display: 'flex', width: '500px' }}>
-      <DefaultAutoComplete
+      <AutoComplete
         name="categories"
         label={text('Label', 'Поиск по категории товаров')}
         options={options}
@@ -94,7 +94,7 @@ export const DefaultAutoCompleteCategoriesServices = () => {
   };
   return (
     <div style={{ display: 'flex', width: '500px' }}>
-      <DefaultAutoComplete
+      <AutoComplete
         name="categories"
         label={text('Label', 'Поиск по категории услуг')}
         options={createObjectWithLabel(serviceCategoriesList) || options}

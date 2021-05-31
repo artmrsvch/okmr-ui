@@ -1,14 +1,17 @@
 import * as React from 'react';
 import { Button } from '../index';
+import { ButtonProps } from 'antd';
 
 export interface CustomizedButtonProps {
   suffix?: React.ReactNode | string;
   prefix?: React.ReactNode | string;
-  children: string | React.ReactNode;
+  children?: string | React.ReactNode;
   className?: string;
 }
 
-const CustomizedButton: React.FC<CustomizedButtonProps> = ({
+export type CustomizedProps = CustomizedButtonProps & ButtonProps;
+
+const CustomizedButton: React.FC<CustomizedProps> = ({
   suffix,
   prefix,
   children,
