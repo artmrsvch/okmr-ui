@@ -28,7 +28,7 @@
     "build": "tsc --build \"./tsconfig.json\"",
     "build:storybook": "build-storybook",
     "clean": "rm -rf ./lib",
-    "compile-icons": "npx @svgr/cli -d src/icons src/icons --typescript",
+    "compile-icons": "npx @svgr/cli -d src/icons src/icons/svg --typescript",
     "eject": "react-scripts eject",
     "prebuild": "npm run clean && npm run compile-icons",
     "prepublish": "npm run build",
