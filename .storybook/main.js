@@ -15,14 +15,13 @@ module.exports = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       compilerOptions: {
-        allowSyntheticDefaultImports: false,
+        allowSyntheticDefaultImports: true,
         esModuleInterop: false
       }
     }
   },
   webpackFinal: async (config) => {
     config.resolve.modules = [...(config.resolve.modules || []), path.resolve(__dirname, '../src')];
-
     return config;
   }
 };
