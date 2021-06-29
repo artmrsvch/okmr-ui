@@ -57,7 +57,6 @@ export const NavigationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100% - 60px);
-  justify-content: space-between;
   max-height: -webkit-fill-available;
   -webkit-overflow-scrolling: touch;
 `;
