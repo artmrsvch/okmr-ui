@@ -18,6 +18,20 @@ import SvgLogoMin from '../../icons/LogoMin';
 import InternalHeader from './header';
 import SvgLogo from '../../icons/Logo';
 import { LogoMin } from '../../icons';
+import SvgOrders from '../../icons/Orders';
+import SvgProducts from '../../icons/Products';
+import SvgServices from '../../icons/Services';
+import SvgSetings from '../../icons/Setings';
+import SvgClients from '../../icons/Clients';
+import SvgReviews from '../../icons/Reviews';
+import SvgReports from '../../icons/Reports';
+import SvgDocuments from '../../icons/Documents';
+import SvgFeedback from '../../icons/Feedback';
+import SvgMessanger from '../../icons/Messanger';
+import SvgHelps from '../../icons/Helps';
+import SvgMarket from '../../icons/Market';
+import SvgCabinetClient from '../../icons/CabinetClient';
+import SvgCabinetPartner from '../../icons/CabinetPartner';
 
 const LinkIm = () => (
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,62 +68,88 @@ const linksShort = [
   {
     text: 'Заказы',
     to: '/',
-    icon: <SvgArrowLeft />,
+    icon: <SvgOrders />,
     supplierOnly: true
   },
   {
     text: 'Товары',
     to: '/one',
-    icon: <SvgArrowLeft />,
+    icon: <SvgProducts />,
     supplierOnly: true
   },
   {
-    text: 'Удаленные аккаунты',
+    text: 'Услуги',
     to: '/two',
-    icon: <SvgArrowLeft />,
+    icon: <SvgServices />,
     additionalWidget: <NavigationCountWidget>0</NavigationCountWidget>
   },
   {
-    text: 'Удаленные аккаунты',
+    text: 'Настройки магазина',
     to: '/twod',
-    icon: <SvgArrowLeft />,
+    icon: <SvgSetings />,
     supplierOnly: true
   },
   {
-    text: 'Профиль',
+    text: 'Клиенты',
     to: '/twog',
-    icon: <SvgArrowLeft />,
+    icon: <SvgClients />,
     supplierOnly: true,
     additionalWidget: <LinkToIm />
   },
   {
-    text: 'Товары',
+    text: 'Отзывы',
     to: '/onef',
-    icon: <SvgArrowLeft />,
+    icon: <SvgReviews />,
     supplierOnly: true
-  },
-  {
-    text: 'Удаленные аккаунты',
-    to: '/twof',
-    icon: <SvgArrowLeft />,
-    supplierOnly: true
-  },
-  {
-    text: 'Настройки',
-    to: '/three',
-    icon: <SvgArrowLeft />
   }
 ];
-const externalLinks = [
+const documentLinks = [
   {
-    text: 'Главная страница',
-    to: 'https://suworld.ru',
-    icon: <LogoMin />
+    text: 'Отчеты по оплатам',
+    to: '/twof',
+    icon: <SvgReports />,
+    supplierOnly: true
+  },
+  {
+    text: 'Документооборот',
+    to: '/three',
+    icon: <SvgDocuments />
+  }
+];
+const supportsLink = [
+  {
+    text: 'Помощь',
+    to: '/sssss',
+    icon: <SvgHelps />,
+    supplierOnly: true
   },
   {
     text: 'Сообщения',
+    to: '/thddddree',
+    icon: <SvgMessanger />
+  },
+  {
+    text: 'Обратная связь',
+    to: '/thddddredde',
+    icon: <SvgFeedback />
+  }
+];
+
+const externalLinks = [
+  {
+    text: 'Кабинет клиент',
+    to: 'https://suworld.ru',
+    icon: <SvgCabinetClient />
+  },
+  {
+    text: 'Кабинет партнера',
+    to: 'https://suworld.ru',
+    icon: <SvgCabinetPartner />
+  },
+  {
+    text: 'Маркетплейс',
     to: '/four',
-    icon: <LogoMin />
+    icon: <SvgMarket />
   }
 ];
 
@@ -313,10 +353,12 @@ const Template: Story = (args: any) => (
 );
 export const DashboardLayout = Template.bind({});
 DashboardLayout.args = {
-  role: 'admin',
+  userRole: 'admin',
   isHasSupplierStatus: true,
   links: linksShort,
   externalLinks,
+  documentsLinks: documentLinks,
+  supportLinks: supportsLink,
   isPartner: false,
   headerWidgets
 };
@@ -337,7 +379,7 @@ DashboardLayout.argTypes = {
   externalLinks: {
     description: 'Список внешних ссылок системы Suworld'
   },
-  role: {
+  userRole: {
     description: 'Роль',
     control: {
       type: 'select',

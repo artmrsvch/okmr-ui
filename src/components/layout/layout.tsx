@@ -26,6 +26,9 @@ export interface DashboardLayoutProps {
   isHasSupplierStatus?: boolean;
   isPartner?: boolean;
   externalLinks?: NavigationLink[];
+  supportLinks?: NavigationLink[];
+  auxiliaryLinks?: NavigationLink[];
+  documentsLinks?: NavigationLink[];
   links: NavigationLink[];
   userRole: Role;
 }
@@ -35,6 +38,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   isWithoutContentWrap,
   headerWidgets,
   links,
+  auxiliaryLinks,
+  documentsLinks,
+  supportLinks,
   isHasSupplierStatus,
   isPartner,
   externalLinks,
@@ -47,6 +53,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       isHasSupplierStatus={isHasSupplierStatus}
       externalLinks={externalLinks}
       links={links}
+      auxiliaryLinks={auxiliaryLinks}
+      supportLinks={supportLinks}
+      documentsLinks={documentsLinks}
       isPartner={isPartner}
     />
     <Workspace className="dashboard-workspace">

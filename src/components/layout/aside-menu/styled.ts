@@ -49,7 +49,7 @@ export const AsideCloseIcon = styled.label`
 `;
 export const InlineFlexDiv = styled.a`
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 export const NavigationWrapper = styled.div`
@@ -73,7 +73,7 @@ export const NavigationItem = styled.li<{ isActive?: boolean }>`
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  height: 50px;
+  height: 43px;
   line-height: 30px;
   margin: 0 5px;
   padding: 4px;
@@ -85,7 +85,7 @@ export const NavigationItem = styled.li<{ isActive?: boolean }>`
 
   svg path,
   svg circle {
-    stroke: #a8ccff;
+    fill: #a8ccff;
   }
 
   ${({ isActive }) =>
@@ -96,14 +96,16 @@ export const NavigationItem = styled.li<{ isActive?: boolean }>`
       .navigation-item__link {
         color: #005DE2 !important;
         background: white;
+        border: 1px solid #d7e7ff;
         box-shadow: 0px 2px 4px rgba(0, 93, 226, 0.06);
-        border-radius: 4px;
+        border-radius: 8px;
         align-items: center;
+        height: 36px;
         padding: 4px;
       }
       
       svg path, svg circle {
-        stroke: #005de2
+        fill: #005de2
       }
       `
       : ''}
@@ -123,11 +125,12 @@ export const NavigationCountWidget = styled.div`
 export const NavigationLinkText = styled.span`
   margin-left: 10px;
   transition: 0.2s;
-  color: #6fa7f5;
+  //color: #6fa7f5;
   pointer-events: auto;
   line-height: normal;
   display: inline-flex;
   align-items: center;
+  font-weight: 600;
 
   .navigation-item--active & {
     color: #005de2;
@@ -138,19 +141,26 @@ export const NavigationLink = styled<any>(Link)`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  color: #6fa7f5;
+
   font-weight: bold;
   ${({ disabled }) =>
     disabled
       ? `pointer-events: none;
-  opacity: 0.5;
+ color: #BFC8D1;
+ 
+ svg path,
+  svg circle {
+    fill: #BFC8D1!important;
+  }
   `
-      : ''}
+      : 'color: #6fa7f5;'}
   width: 100%;
   line-height: 1.5;
 `;
 export const NavigationExternalLink = styled.a`
   color: #6fa7f5;
+  display: flex;
+  align-items: center;
   background: transparent;
   font-weight: bold;
   width: 100%;
@@ -163,8 +173,11 @@ export const NavigationLinkContent = styled.div`
   flex: 1;
 `;
 export const NavigationLinkIcon = styled.div`
-  width: 26px;
-  height: 26px;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
 `;
 export const WidgetWrapper = styled.div`
   padding: 0;
@@ -179,9 +192,8 @@ export const WidgetWrapper = styled.div`
 `;
 
 export const NavigationDivider = styled.div`
-  width: 80%;
+  width: 90%;
   min-height: 1px;
-  margin-left: auto;
-  margin-right: auto;
   background: #d7e7ff;
+  margin: 13px 0;
 `;

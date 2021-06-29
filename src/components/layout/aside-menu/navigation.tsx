@@ -31,7 +31,7 @@ const generateTitleText = (role: Role, isPartner?: boolean) => {
   if (role === 'admin') return 'Админ';
   if (role === 'accountant') return 'Бухгалтер';
   if (role === 'supplierModerator') return 'Модератор';
-  if (role === 'supplier') return 'Поставщики';
+  if (role === 'supplier') return 'Продавцы';
   if (role === 'user' && isPartner) return 'Партнеры';
   if (role === 'user') return 'Пользователь';
 
@@ -40,7 +40,14 @@ const generateTitleText = (role: Role, isPartner?: boolean) => {
 
 export type AsideMenuProps = Pick<
   DashboardLayoutProps,
-  'userRole' | 'isPartner' | 'links' | 'externalLinks' | 'isHasSupplierStatus'
+  | 'userRole'
+  | 'isPartner'
+  | 'links'
+  | 'externalLinks'
+  | 'supportLinks'
+  | 'auxiliaryLinks'
+  | 'documentsLinks'
+  | 'isHasSupplierStatus'
 >;
 export type ExternalLinkListProps = Pick<DashboardLayoutProps, 'links'>;
 export type LinkListProps = Pick<DashboardLayoutProps, 'links' | 'isHasSupplierStatus'>;
@@ -51,7 +58,7 @@ const ExternalLinkList: React.FC<ExternalLinkListProps> = ({ links }) => (
     {links.map((link: any, iter: number) => (
       <NavigationItem key={`${link.to + iter}`}>
         <NavigationExternalLink href={link.to}>
-          {link.icon}
+          <NavigationLinkIcon>{link.icon}</NavigationLinkIcon>
           <NavigationLinkText className="navigation-link-text">{link.text}</NavigationLinkText>
         </NavigationExternalLink>
       </NavigationItem>
@@ -105,7 +112,7 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   );
 
   return (
-    <nav style={{ flex: 1 }}>
+    <nav>
       <NavigationList>
         {sortedLinks.map((link) => (
           <NavigationItem
@@ -144,13 +151,38 @@ const LinkList: React.FC<LinkListProps> = ({ links, isHasSupplierStatus }) => {
   );
 };
 
-const Navigation: React.FC<NavigationProps> = ({ links, externalLinks, isHasSupplierStatus }) => (
+const Navigation: React.FC<NavigationProps> = ({
+  links,
+  externalLinks,
+  auxiliaryLinks,
+  documentsLinks,
+  supportLinks,
+  isHasSupplierStatus
+}) => (
   <NavigationWrapper>
     <LinkList links={links} isHasSupplierStatus={isHasSupplierStatus} />
+    {documentsLinks && documentsLinks[0] && (
+      <>
+        <NavigationDivider />
+        <LinkList links={documentsLinks} isHasSupplierStatus={isHasSupplierStatus} />
+      </>
+    )}
+    {supportLinks && supportLinks[0] && (
+      <>
+        <NavigationDivider />
+        <LinkList links={supportLinks} isHasSupplierStatus={isHasSupplierStatus} />
+      </>
+    )}
     {externalLinks && externalLinks[0] && (
       <>
         <NavigationDivider />
         <ExternalLinkList links={externalLinks} />
+      </>
+    )}
+    {auxiliaryLinks && auxiliaryLinks[0] && (
+      <>
+        <NavigationDivider />
+        <LinkList links={auxiliaryLinks} isHasSupplierStatus={isHasSupplierStatus} />
       </>
     )}
   </NavigationWrapper>
@@ -174,6 +206,9 @@ const AsideMenu: React.FC<AsideMenuProps> = ({
   isPartner,
   isHasSupplierStatus,
   externalLinks,
+  auxiliaryLinks,
+  documentsLinks,
+  supportLinks,
   links
 }) => (
   <Aside className="aside-menu">
@@ -195,6 +230,9 @@ const AsideMenu: React.FC<AsideMenuProps> = ({
     </AsideHeadline>
     <Navigation
       isHasSupplierStatus={isHasSupplierStatus}
+      auxiliaryLinks={auxiliaryLinks}
+      documentsLinks={documentsLinks}
+      supportLinks={supportLinks}
       links={links}
       externalLinks={externalLinks}
     />
